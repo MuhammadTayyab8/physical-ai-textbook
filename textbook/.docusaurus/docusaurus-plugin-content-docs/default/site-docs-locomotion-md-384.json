@@ -1,0 +1,26 @@
+{
+  "id": "locomotion",
+  "title": "Locomotion Systems in Humanoid Robots",
+  "description": "Understanding locomotion systems and control strategies in humanoid robots",
+  "source": "@site/docs/locomotion.md",
+  "sourceDirName": ".",
+  "slug": "/locomotion",
+  "permalink": "/docs/locomotion",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/your-organization/physical-ai-textbook/docs/locomotion.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_label": "Locomotion Systems",
+    "sidebar_position": 3,
+    "title": "Locomotion Systems in Humanoid Robots",
+    "description": "Understanding locomotion systems and control strategies in humanoid robots"
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Foundations",
+    "permalink": "/docs/foundations"
+  }
+}

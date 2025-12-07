@@ -1,55 +1,51 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: 0.1.0 → 1.0.0
+- Modified principles: All principles completely redefined for Physical AI & Humanoid Robotics Textbook project
+- Added sections: Content Accuracy & RAG Quality, AI Integration, Deployment & Documentation Standards
+- Removed sections: None
+- Templates requiring updates:
+  - .specify/templates/plan-template.md ✅ updated
+  - .specify/templates/spec-template.md ✅ updated
+  - .specify/templates/tasks-template.md ✅ updated
+  - .specify/commands/*.toml ⚠ pending review
+- Follow-up TODOs: None
+
+Rationale for version bump: MAJOR - this is a complete redefinition of principles for the new project
+-->
+
+# Physical AI & Humanoid Robotics Textbook Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Content Accuracy & RAG Quality (NON-NEGOTIABLE)
+All textbook content must be technically accurate, thoroughly reviewed by domain experts, and validated through the RAG system. Every chapter must be testable for factual correctness and chatbot retrieval accuracy. RAG responses must cite sources and maintain precision when answering user queries about Physical AI and Humanoid Robotics.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Modular Documentation Architecture
+Every chapter and section must be modular and independently accessible via Docusaurus. Content should follow a clear hierarchy that supports both sequential reading and random access. Each module should be self-contained enough to stand alone while linking cohesively to the broader textbook.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Test-Driven Content Development (NON-NEGOTIABLE)
+Content development follows a test-first approach: Learning objectives defined → Test questions created → Content written to meet objectives → Tests validated. RAG functionality must be tested with defined accuracy metrics before each deployment. Every new section must include verification queries to ensure retrieval quality.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. AI Integration Excellence
+The RAG chatbot must provide accurate, contextual responses leveraging the textbook content. All AI interactions should maintain a clear distinction between textbook facts and speculative content. The system must gracefully handle queries outside the textbook scope with appropriate disclaimers.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Open Source & Reproducible Standards
+All code, documentation, and deployment processes must be fully reproducible from the public repository. Installation and setup should follow the principle of "works on anyone's machine with minimal configuration". Dependencies must be version-locked and deployment scripts idempotent.
 
-### [PRINCIPLE_6_NAME]
+### VI. Accessibility & Education-First Design
+All content and interfaces must be accessible to diverse learning styles and technical backgrounds. The textbook should provide multiple pathways through the material, supporting both novice learners and advanced practitioners. User experience should prioritize educational value over technical sophistication.
 
+## Technology Stack Requirements
 
-[PRINCIPLE__DESCRIPTION]
+The project must use Docusaurus for documentation, FastAPI for backend services, Qdrant for vector storage, Neon for PostgreSQL database, and OpenAI agents for chat functionality. All components must be containerized using Docker to ensure consistent environments across development, testing, and production.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Development Workflow
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+All contributions must undergo peer review with at least one domain expert. New content requires fact-checking and technical validation. Pull requests must include updates to both textbook content and associated RAG test cases. Feature branches should be short-lived with atomic commits that maintain system functionality.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution governs all development activities for the Physical AI & Humanoid Robotics Textbook project. Amendments require documentation of technical rationale and approval from the core maintainers. All PRs and reviews must verify compliance with these principles. New features must demonstrate clear educational value before acceptance.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-07 | **Last Amended**: 2025-12-07

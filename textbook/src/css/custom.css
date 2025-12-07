@@ -1,0 +1,199 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Custom variables for the textbook */
+  /* --textbook-content-max-width: 800px; */
+  --textbook-content-padding: 2rem;
+  --textbook-font-size-base: 18px;
+  --textbook-line-height: 1.6;
+  --textbook-color-text: #2c3e50;
+  --textbook-color-text-light: #7f8c8d;
+  --textbook-color-background: #ffffff;
+  --textbook-color-border: #e0e0e0;
+  --textbook-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* Custom dark mode variables */
+  --textbook-color-text: #ecf0f1;
+  --textbook-color-text-light: #bdc3c7;
+  --textbook-color-background: #1a1a1a;
+  --textbook-color-border: #34495e;
+}
+
+/* Main content area styling */
+.main-wrapper {
+  max-width: var(--textbook-content-max-width);
+  margin: 0 auto;
+  padding: var(--textbook-content-padding);
+}
+
+/* Improve readability for textbook content */
+.markdown {
+  font-size: var(--textbook-font-size-base);
+  line-height: var(--textbook-line-height);
+  color: var(--textbook-color-text);
+}
+
+/* Better heading styling */
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  color: var(--textbook-color-text);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.markdown h1 {
+  border-bottom: 2px solid var(--textbook-color-border);
+  padding-bottom: 0.5rem;
+}
+
+/* Better paragraph styling */
+.markdown p {
+  margin-bottom: 1.2rem;
+}
+
+/* Code block styling */
+.code-block {
+  border-radius: 6px;
+  margin: 1rem 0;
+  overflow: auto;
+}
+
+/* Responsive design for different screen sizes */
+@media (max-width: 996px) {
+  .main-wrapper {
+    padding: 1rem;
+  }
+
+  .markdown {
+    font-size: calc(var(--textbook-font-size-base) * 0.95);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-wrapper {
+    padding: 0.8rem;
+  }
+
+  .markdown {
+    font-size: calc(var(--textbook-font-size-base) * 0.9);
+  }
+
+  .markdown h1 {
+    font-size: 1.8rem;
+  }
+
+  .markdown h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-wrapper {
+    padding: 0.6rem;
+  }
+
+  .markdown {
+    font-size: calc(var(--textbook-font-size-base) * 0.85);
+  }
+
+  .markdown h1 {
+    font-size: 1.6rem;
+  }
+
+  .markdown h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Enhanced blockquote styling */
+.markdown blockquote {
+  border-left: 4px solid var(--ifm-color-primary);
+  background-color: rgba(46, 133, 85, 0.05);
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
+  border-radius: 0 6px 6px 0;
+}
+
+/* Enhanced table styling */
+.markdown table {
+  display: table;
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.markdown table th,
+.markdown table td {
+  padding: 0.75rem;
+  border: 1px solid var(--textbook-color-border);
+  text-align: left;
+}
+
+.markdown table th {
+  background-color: rgba(46, 133, 85, 0.1);
+}
+
+/* Better list styling */
+.markdown ul,
+.markdown ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.markdown li {
+  margin-bottom: 0.5rem;
+}
+
+/* Enhanced link styling */
+.markdown a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.markdown a:hover {
+  text-decoration: underline;
+}
+
+/* Improve sidebar navigation readability */
+.menu__list-item-collapsible .menu__link--sublist {
+  font-weight: 600;
+}
+
+/* Better focus styles for accessibility */
+.markdown a:focus,
+.menu__link:focus,
+.button:focus {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}

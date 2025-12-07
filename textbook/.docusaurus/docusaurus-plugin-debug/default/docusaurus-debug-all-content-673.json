@@ -1,0 +1,179 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "loadedVersions": [
+        {
+          "versionName": "current",
+          "label": "Next",
+          "banner": null,
+          "badge": false,
+          "noIndex": false,
+          "className": "docs-version-current",
+          "path": "/docs",
+          "tagsPath": "/docs/tags",
+          "editUrl": "https://github.com/your-organization/physical-ai-textbook/docs",
+          "editUrlLocalized": "https://github.com/your-organization/physical-ai-textbook/i18n/en/docusaurus-plugin-content-docs/current",
+          "isLast": true,
+          "routePriority": -1,
+          "sidebarFilePath": "D:\\Tayyab\\AI-Hackathon\\hackathon-1\\textbook\\sidebars.js",
+          "contentPath": "D:\\Tayyab\\AI-Hackathon\\hackathon-1\\textbook\\docs",
+          "contentPathLocalized": "D:\\Tayyab\\AI-Hackathon\\hackathon-1\\textbook\\i18n\\en\\docusaurus-plugin-content-docs\\current",
+          "docs": [
+            {
+              "id": "foundations",
+              "title": "Foundations of Physical AI and Robotics",
+              "description": "Explore the foundational concepts of Physical AI and Robotics",
+              "source": "@site/docs/foundations.md",
+              "sourceDirName": ".",
+              "slug": "/foundations",
+              "permalink": "/docs/foundations",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/your-organization/physical-ai-textbook/docs/foundations.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "sidebar_label": "Foundations",
+                "sidebar_position": 2,
+                "title": "Foundations of Physical AI and Robotics",
+                "description": "Explore the foundational concepts of Physical AI and Robotics"
+              },
+              "sidebar": "textbookSidebar",
+              "previous": {
+                "title": "Introduction",
+                "permalink": "/docs/introduction"
+              },
+              "next": {
+                "title": "Locomotion Systems",
+                "permalink": "/docs/locomotion"
+              }
+            },
+            {
+              "id": "introduction",
+              "title": "Introduction to Physical AI & Humanoid Robotics",
+              "description": "Learn about the fundamentals of Physical AI and Humanoid Robotics",
+              "source": "@site/docs/introduction.md",
+              "sourceDirName": ".",
+              "slug": "/introduction",
+              "permalink": "/docs/introduction",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/your-organization/physical-ai-textbook/docs/introduction.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_label": "Introduction",
+                "sidebar_position": 1,
+                "title": "Introduction to Physical AI & Humanoid Robotics",
+                "description": "Learn about the fundamentals of Physical AI and Humanoid Robotics"
+              },
+              "sidebar": "textbookSidebar",
+              "next": {
+                "title": "Introduction",
+                "permalink": "/docs/introduction"
+              }
+            },
+            {
+              "id": "locomotion",
+              "title": "Locomotion Systems in Humanoid Robots",
+              "description": "Understanding locomotion systems and control strategies in humanoid robots",
+              "source": "@site/docs/locomotion.md",
+              "sourceDirName": ".",
+              "slug": "/locomotion",
+              "permalink": "/docs/locomotion",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/your-organization/physical-ai-textbook/docs/locomotion.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 3,
+              "frontMatter": {
+                "sidebar_label": "Locomotion Systems",
+                "sidebar_position": 3,
+                "title": "Locomotion Systems in Humanoid Robots",
+                "description": "Understanding locomotion systems and control strategies in humanoid robots"
+              },
+              "sidebar": "textbookSidebar",
+              "previous": {
+                "title": "Foundations",
+                "permalink": "/docs/foundations"
+              }
+            }
+          ],
+          "drafts": [],
+          "sidebars": {
+            "textbookSidebar": [
+              {
+                "type": "category",
+                "label": "Getting Started",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "introduction"
+                  }
+                ],
+                "link": {
+                  "type": "doc",
+                  "id": "introduction"
+                },
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Fundamentals",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "foundations"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Systems and Applications",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "locomotion"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "docusaurus-plugin-content-pages": {
+    "default": [
+      {
+        "type": "jsx",
+        "permalink": "/",
+        "source": "@site/src/pages/index.js"
+      },
+      {
+        "type": "mdx",
+        "permalink": "/",
+        "source": "@site/src/pages/index.md",
+        "title": "Physical AI & Humanoid Robotics Textbook",
+        "description": "Welcome to the comprehensive textbook on Physical AI and Humanoid Robotics. This resource provides in-depth coverage of the field, from fundamental concepts to advanced applications.",
+        "frontMatter": {
+          "title": "Physical AI & Humanoid Robotics Textbook",
+          "hide_table_of_contents": true
+        },
+        "unlisted": false
+      }
+    ]
+  },
+  "docusaurus-plugin-debug": {},
+  "docusaurus-theme-classic": {},
+  "docusaurus-bootstrap-plugin": {},
+  "docusaurus-mdx-fallback-plugin": {}
+}

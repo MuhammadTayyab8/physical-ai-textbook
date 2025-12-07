@@ -1,0 +1,84 @@
+{
+  "/__docusaurus/debug-a30": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugd-55-652"
+    }
+  },
+  "/__docusaurus/debug/config-9aa": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugd-55-652"
+    }
+  },
+  "/__docusaurus/debug/content-ae1": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugd-55-652"
+    },
+    "allContent": "allContent---docusaurus-debug-content-246-9aa"
+  },
+  "/__docusaurus/debug/globalData-c93": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugd-55-652"
+    }
+  },
+  "/__docusaurus/debug/metadata-96e": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugd-55-652"
+    }
+  },
+  "/__docusaurus/debug/registry-062": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugd-55-652"
+    }
+  },
+  "/__docusaurus/debug/routes-933": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugd-55-652"
+    }
+  },
+  "/docs-c39": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---docs-40-b-691"
+    }
+  },
+  "/docs-7d0": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "version": "version---docs-935-398"
+  },
+  "/docs-356": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/docs/foundations-935": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-foundationsb-15-536"
+  },
+  "/docs/introduction-652": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-introductiona-09-6b4"
+  },
+  "/docs/locomotion-acb": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-locomotion-384-e40"
+  },
+  "/-6a3": {
+    "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
+    "__context": {
+      "plugin": "plugin---087-0cb"
+    },
+    "config": "config---5-e-9-4f3"
+  },
+  "/-2a3": {
+    "__comp": "__comp---theme-mdx-page-1-f-3-b90",
+    "__context": {
+      "plugin": "plugin---087-0cb"
+    },
+    "content": "content---f-39-267"
+  }
+}
