@@ -7,15 +7,10 @@ const config = {
   tagline: 'Comprehensive textbook on Physical AI and Humanoid Robotics',
   favicon: 'img/favicon.ico',
 
-  // Set the production url of your site here
-  url: 'https://MuhammadTayyab8.github.io',  // Replace with your GitHub username
-  // Set the /<base>/ pathname under which your site is served
-  // For GitHub Pages deployment, it's '/<repository-name>/'
-  baseUrl: '/hackathon-1/',  // Replace with your repository name
-
-  // GitHub pages deployment config.
-  organizationName: 'MuhammadTayyab8', // Usually your GitHub org/user name.
-  projectName: 'hackathon-1', // Usually your repo name (e.g., name of this repo).
+  url: 'https://MuhammadTayyab8.github.io',
+  baseUrl: '/physical-ai-textbook/',     // <- must match repo name
+  organizationName: 'MuhammadTayyab8',
+  projectName: 'physical-ai-textbook',   // <- must match repo name
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
