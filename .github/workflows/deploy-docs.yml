@@ -1,34 +1,26 @@
-name: Deploy Docusaurus Textbook
+name: Deploy
 
 on:
   push:
-    branches: [ "main" ]
-    paths:
-      - "textbook/**"
+    branches: [main]
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: Install dependencies
-        working-directory: ./textbook
-        run: npm install
+      - run: npm install
 
-      - name: Build Docusaurus
-        working-directory: ./textbook
-        run: npm run build
+      - run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: textbook/build
+          publish_dir: ./build   # <--- FIXED

@@ -8,13 +8,13 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-organization.github.io',
+  url: 'https://github.com/MuhammadTayyab8/',
   // Set the /<base>/ pathname under which your site is served
   // For GitHub Pages deployment, it's often '/<project-name>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
-  organizationName: 'your-organization', // Usually your GitHub org/user name.
+  organizationName: 'Muhammad Tayyab', // Usually your GitHub org/user name.
   projectName: 'physical-ai-textbook', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -38,7 +38,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/your-organization/physical-ai-textbook',
+            'https://github.com/MuhammadTayyab8/physical-ai-textbook',
           routeBasePath: '/docs', // This ensures docs are served from /docs
         },
         blog: false, // Disable blog if not needed
