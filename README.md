@@ -151,6 +151,18 @@ physical-ai-textbook/
 5. Push to the branch (`git push origin feature/amazing-feature`)
 6. Open a Pull Request
 
+## Deployment
+
+The textbook is deployed to GitHub Pages for public access. Follow these steps to deploy or redeploy:
+
+1. Ensure GitHub Pages is enabled in your repository settings
+2. The deployment will happen automatically when changes are pushed to the `main` branch
+3. Your site will be available at: `https://[your-username].github.io/[repository-name]`
+
+For this repository, the textbook will be available at: `https://MuhammadTayyab8.github.io/hackathon-1`
+
+For detailed deployment instructions, see the [GitHub Pages Deployment Guide](deployment/github-actions/README.md).
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.

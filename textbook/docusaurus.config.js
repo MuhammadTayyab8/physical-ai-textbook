@@ -8,14 +8,14 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://github.com/MuhammadTayyab8/',
+  url: 'https://MuhammadTayyab8.github.io',  // Replace with your GitHub username
   // Set the /<base>/ pathname under which your site is served
-  // For GitHub Pages deployment, it's often '/<project-name>/'
-  baseUrl: '/',
+  // For GitHub Pages deployment, it's '/<repository-name>/'
+  baseUrl: '/hackathon-1/',  // Replace with your repository name
 
   // GitHub pages deployment config.
-  organizationName: 'Muhammad Tayyab', // Usually your GitHub org/user name.
-  projectName: 'physical-ai-textbook', // Usually your repo name.
+  organizationName: 'MuhammadTayyab8', // Usually your GitHub org/user name.
+  projectName: 'hackathon-1', // Usually your repo name (e.g., name of this repo).
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -38,7 +38,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/MuhammadTayyab8/physical-ai-textbook',
+            'https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/',
           routeBasePath: '/docs', // This ensures docs are served from /docs
         },
         blog: false, // Disable blog if not needed
@@ -73,7 +73,7 @@ const config = {
           //   position: 'left',
           // },
           {
-            href: 'https://github.com/your-organization/physical-ai-textbook',
+            href: 'https://github.com/MuhammadTayyab8/hackathon-1',
             label: 'GitHub',
             position: 'right',
           },
