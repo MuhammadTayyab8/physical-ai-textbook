@@ -5,10 +5,10 @@
   "source": "@site/docs/introduction.md",
   "sourceDirName": ".",
   "slug": "/introduction",
-  "permalink": "/docs/introduction",
+  "permalink": "/hackathon-1/docs/introduction",
   "draft": false,
   "unlisted": false,
-  "editUrl": "https://github.com/your-organization/physical-ai-textbook/docs/introduction.md",
+  "editUrl": "https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/docs/introduction.md",
   "tags": [],
   "version": "current",
   "sidebarPosition": 1,
@@ -21,6 +21,6 @@
   "sidebar": "textbookSidebar",
   "next": {
     "title": "Introduction",
-    "permalink": "/docs/introduction"
+    "permalink": "/hackathon-1/docs/introduction"
   }
 }

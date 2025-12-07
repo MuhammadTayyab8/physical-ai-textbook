@@ -1,28 +1,28 @@
 {
   "docusaurus-plugin-content-docs": {
     "default": {
-      "path": "/docs",
+      "path": "/hackathon-1/docs",
       "versions": [
         {
           "name": "current",
           "label": "Next",
           "isLast": true,
-          "path": "/docs",
+          "path": "/hackathon-1/docs",
           "mainDocId": "introduction",
           "docs": [
             {
               "id": "foundations",
-              "path": "/docs/foundations",
+              "path": "/hackathon-1/docs/foundations",
               "sidebar": "textbookSidebar"
             },
             {
               "id": "introduction",
-              "path": "/docs/introduction",
+              "path": "/hackathon-1/docs/introduction",
               "sidebar": "textbookSidebar"
             },
             {
               "id": "locomotion",
-              "path": "/docs/locomotion",
+              "path": "/hackathon-1/docs/locomotion",
               "sidebar": "textbookSidebar"
             }
           ],
@@ -30,7 +30,7 @@
           "sidebars": {
             "textbookSidebar": {
               "link": {
-                "path": "/docs/introduction",
+                "path": "/hackathon-1/docs/introduction",
                 "label": "Getting Started"
               }
             }

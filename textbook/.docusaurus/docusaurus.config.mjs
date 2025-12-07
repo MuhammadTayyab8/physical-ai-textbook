@@ -7,10 +7,10 @@ export default {
   "title": "Physical AI & Humanoid Robotics Textbook",
   "tagline": "Comprehensive textbook on Physical AI and Humanoid Robotics",
   "favicon": "img/favicon.ico",
-  "url": "https://your-organization.github.io",
-  "baseUrl": "/",
-  "organizationName": "your-organization",
-  "projectName": "physical-ai-textbook",
+  "url": "https://MuhammadTayyab8.github.io",
+  "baseUrl": "/hackathon-1/",
+  "organizationName": "MuhammadTayyab8",
+  "projectName": "hackathon-1",
   "onBrokenLinks": "throw",
   "onBrokenMarkdownLinks": "warn",
   "i18n": {
@@ -27,7 +27,7 @@ export default {
       {
         "docs": {
           "sidebarPath": "./sidebars.js",
-          "editUrl": "https://github.com/your-organization/physical-ai-textbook",
+          "editUrl": "https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/",
           "routeBasePath": "/docs"
         },
         "blog": false,
@@ -41,10 +41,6 @@ export default {
     "image": "img/docusaurus-social-card.jpg",
     "navbar": {
       "title": "Physical AI Textbook",
-      "logo": {
-        "alt": "Physical AI & Humanoid Robotics Logo",
-        "src": "img/logo.svg"
-      },
       "items": [
         {
           "type": "docSidebar",
@@ -53,12 +49,7 @@ export default {
           "label": "Textbook Chapters"
         },
         {
-          "to": "/",
-          "label": "Home",
-          "position": "left"
-        },
-        {
-          "href": "https://github.com/your-organization/physical-ai-textbook",
+          "href": "https://github.com/MuhammadTayyab8/hackathon-1",
           "label": "GitHub",
           "position": "right"
         }
@@ -86,24 +77,28 @@ export default {
           ]
         },
         {
-          "title": "Community",
+          "title": "Panaversity",
           "items": [
             {
-              "label": "Stack Overflow",
-              "href": "https://stackoverflow.com/questions/tagged/docusaurus"
+              "label": "Official Website",
+              "href": "https://panaversity.org"
             },
             {
-              "label": "Discord",
-              "href": "https://discordapp.com/invite/docusaurus"
+              "label": "AI Native Book",
+              "href": "https://ai-native.panaversity.org"
             }
           ]
         },
         {
-          "title": "More",
+          "title": "Lets Connect",
           "items": [
             {
-              "label": "GitHub",
-              "href": "https://github.com/your-organization/physical-ai-textbook"
+              "label": "linkedin",
+              "href": "https://www.linkedin.com/in/muhammad-tayyab-javaid/"
+            },
+            {
+              "label": "Github",
+              "href": "https://github.com/MuhammadTayyab8/"
             }
           ]
         }

@@ -16,14 +16,14 @@
           {
             "type": "link",
             "label": "Introduction",
-            "href": "/docs/introduction",
+            "href": "/hackathon-1/docs/introduction",
             "docId": "introduction",
             "unlisted": false
           }
         ],
         "collapsed": true,
         "collapsible": true,
-        "href": "/docs/introduction"
+        "href": "/hackathon-1/docs/introduction"
       },
       {
         "type": "category",
@@ -32,7 +32,7 @@
           {
             "type": "link",
             "label": "Foundations",
-            "href": "/docs/foundations",
+            "href": "/hackathon-1/docs/foundations",
             "docId": "foundations",
             "unlisted": false
           }
@@ -47,7 +47,7 @@
           {
             "type": "link",
             "label": "Locomotion Systems",
-            "href": "/docs/locomotion",
+            "href": "/hackathon-1/docs/locomotion",
             "docId": "locomotion",
             "unlisted": false
           }

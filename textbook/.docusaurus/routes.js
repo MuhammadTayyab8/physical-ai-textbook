@@ -3,67 +3,32 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/__docusaurus/debug',
-    component: ComponentCreator('/__docusaurus/debug', 'a30'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/config',
-    component: ComponentCreator('/__docusaurus/debug/config', '9aa'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/content',
-    component: ComponentCreator('/__docusaurus/debug/content', 'ae1'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/globalData',
-    component: ComponentCreator('/__docusaurus/debug/globalData', 'c93'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/metadata',
-    component: ComponentCreator('/__docusaurus/debug/metadata', '96e'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/registry',
-    component: ComponentCreator('/__docusaurus/debug/registry', '062'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/routes',
-    component: ComponentCreator('/__docusaurus/debug/routes', '933'),
-    exact: true
-  },
-  {
-    path: '/docs',
-    component: ComponentCreator('/docs', 'c39'),
+    path: '/hackathon-1/docs',
+    component: ComponentCreator('/hackathon-1/docs', 'bbc'),
     routes: [
       {
-        path: '/docs',
-        component: ComponentCreator('/docs', '7d0'),
+        path: '/hackathon-1/docs',
+        component: ComponentCreator('/hackathon-1/docs', 'cd5'),
         routes: [
           {
-            path: '/docs',
-            component: ComponentCreator('/docs', '356'),
+            path: '/hackathon-1/docs',
+            component: ComponentCreator('/hackathon-1/docs', '627'),
             routes: [
               {
-                path: '/docs/foundations',
-                component: ComponentCreator('/docs/foundations', '935'),
+                path: '/hackathon-1/docs/foundations',
+                component: ComponentCreator('/hackathon-1/docs/foundations', 'ff0'),
                 exact: true,
                 sidebar: "textbookSidebar"
               },
               {
-                path: '/docs/introduction',
-                component: ComponentCreator('/docs/introduction', '652'),
+                path: '/hackathon-1/docs/introduction',
+                component: ComponentCreator('/hackathon-1/docs/introduction', '915'),
                 exact: true,
                 sidebar: "textbookSidebar"
               },
               {
-                path: '/docs/locomotion',
-                component: ComponentCreator('/docs/locomotion', 'acb'),
+                path: '/hackathon-1/docs/locomotion',
+                component: ComponentCreator('/hackathon-1/docs/locomotion', 'f6d'),
                 exact: true,
                 sidebar: "textbookSidebar"
               }
@@ -74,13 +39,13 @@ export default [
     ]
   },
   {
-    path: '/',
-    component: ComponentCreator('/', '6a3'),
+    path: '/hackathon-1/',
+    component: ComponentCreator('/hackathon-1/', 'b60'),
     exact: true
   },
   {
-    path: '/',
-    component: ComponentCreator('/', '2a3'),
+    path: '/hackathon-1/',
+    component: ComponentCreator('/hackathon-1/', 'da2'),
     exact: true
   },
   {
