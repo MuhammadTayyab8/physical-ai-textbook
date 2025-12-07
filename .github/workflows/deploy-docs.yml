@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ main ]
 
+
+permissions:
+  contents: write   # REQUIRED for gh-pages deployment
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
