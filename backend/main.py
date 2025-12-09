@@ -1,140 +1,114 @@
-import os
-import asyncio
-from dotenv import load_dotenv
-from retrieving import get_embedding
-
-from agents import (
-    Agent,
-    Runner,
-    RunConfig,
-    AsyncOpenAI,
-    OpenAIChatCompletionsModel,
-    function_tool
-)
-
-import cohere
-from qdrant_client import QdrantClient
-
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from typing import Dict, Any, Optional, List
+import os
+from dotenv import load_dotenv
+import sys
+from pathlib import Path
 
+# Add the backend directory to the Python path
+backend_path = Path(__file__).parent
+sys.path.insert(0, str(backend_path))
+
+# Load environment variables
 load_dotenv()
 
-# ================================
-# FastAPI
-# ================================
-app = FastAPI(title="RAG ChatBot")
+app = FastAPI(
+    title="RAG Chatbot API",
+    description="Backend for RAG Chatbot System with OpenAI Agents",
+    version="0.1.0"
+)
 
+# Add CORS middleware to allow frontend connections
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://192.168.43.129:3000"],
+    allow_origins=["*"],  # In production, replace with your frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# ================================
-# API Keys
-# ================================
-gemini_api_key = os.getenv("GEMINI_API_KEY")
-cohere_api_key = os.getenv("COHERE_API_KEY")
-qdrant_url = os.getenv("QDRANT_URL")
-qdrant_url_key = os.getenv("QDRANT_API_KEY")
-
-if not gemini_api_key:
-    raise ValueError("Gemini key missing")
-
-# ================================
-# Providers
-# ================================
-provider = AsyncOpenAI(
-    api_key=gemini_api_key,
-    base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
-)
-
-model = OpenAIChatCompletionsModel(
-    model="gemini-2.5-flash",
-    openai_client=provider
-)
-
-run_config = RunConfig(
-    model_provider=provider,
-    model=model,
-    tracing_disabled=True,
-)
-
-cohere_client = cohere.Client(cohere_api_key)
-
-qdrant = QdrantClient(
-    url=qdrant_url,
-    api_key=qdrant_url_key
-)
-
-# ================================
-# Tool for Retrieval
-# ================================
-@function_tool
-def retrieve(query):
-    embedding = get_embedding(query)
-    result = qdrant.query_points(
-        collection_name="physical-ai-textbook",
-        query=embedding,
-        limit=5
-    )
-    return [point.payload["text"] for point in result.points]
-
-
-# ================================
-# Agent
-# ================================
-agent = Agent(
-    name="Assistant",
-    instructions="""
-        You are an AI tutor for the *Physical AI & Humanoid Robotics* textbook.
-
-        Your job:
-        1. ALWAYS call the `retrieve` tool first using the user query.
-        2. Only use the retrieved textbook chunks to answer.
-        3. If the retrieved text does NOT contain the answer, respond with:
-        "I don't know based on the textbook."
-        4. Do NOT use outside knowledge.
-        5. Do NOT guess or hallucinate.
-        6. If user asks something outside robotics / the textbook,
-        politely say it is not covered and encourage asking another topic.
-        7. Keep answers short, clear, and factual.
-    """,
-    model=model,
-    tools=[retrieve]
-)
-
-# ================================
-# Routes
-# ================================
-@app.get("/")
-def home():
-    return {"message": "🚀 FastAPI running!"}
-
-
-class ChatBotQuery(BaseModel):
+# Request/Response models
+class QueryRequest(BaseModel):
     query: str
 
+class QueryResponse(BaseModel):
+    response: str
+    sources: Optional[List[Dict[str, Any]]] = []
 
-@app.post("/chat")
-async def generate(req: ChatBotQuery):
+class EmbeddingRequest(BaseModel):
+    textbook_url: str
+
+class EmbeddingResponse(BaseModel):
+    message: str
+    chunks_processed: int
+
+# Global instances
+rag_agent = None
+textbook_embedder = None
+
+@app.on_event("startup")
+async def startup_event():
+    """Initialize the RAG agent and textbook embedder on startup"""
+    global rag_agent, textbook_embedder
+    from src.agents.rag_agent import RAGAgent
+    from src.embeddings.textbook_embedder import TextbookEmbedder
+    
+    rag_agent = RAGAgent()
+    textbook_embedder = TextbookEmbedder()
+
+@app.get("/")
+async def root():
+    return {"message": "RAG Chatbot Backend API", "status": "running"}
+
+@app.post("/query", response_model=QueryResponse)
+async def query_endpoint(request: QueryRequest):
+    """
+    Main endpoint to process user queries using OpenAI Agents with RAG capabilities
+    """
+    global rag_agent
+
+    if not rag_agent:
+        raise HTTPException(status_code=500, detail="RAG agent not initialized")
 
     try:
-        result = await Runner.run(
-            starting_agent=agent,
-            input=req.query,
-            run_config=run_config,
+        # Process the query using the RAG agent
+        result = rag_agent.query(request.query)
+
+        return QueryResponse(
+            response=result["response"],
+            sources=result.get("sources", [])
         )
-
-        return {
-            "success": True,
-            "response": result.final_output
-        }
-
     except Exception as e:
-        print("❌ Error:", str(e))
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=f"Error processing query: {str(e)}")
+
+@app.post("/embed-textbook", response_model=EmbeddingResponse)
+async def embed_textbook_endpoint(request: EmbeddingRequest):
+    """
+    Endpoint to embed a textbook from a URL into the vector store
+    """
+    global textbook_embedder
+
+    if not textbook_embedder:
+        raise HTTPException(status_code=500, detail="Textbook embedder not initialized")
+
+    try:
+        # Process embedding
+        chunks_processed = await textbook_embedder.embed_and_store_textbook(request.textbook_url)
+
+        return EmbeddingResponse(
+            message="Textbook successfully embedded",
+            chunks_processed=chunks_processed
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error embedding textbook: {str(e)}")
+
+@app.get("/health")
+async def health_check():
+    """Health check endpoint"""
+    return {"status": "healthy", "message": "RAG Chatbot Backend API is running"}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
