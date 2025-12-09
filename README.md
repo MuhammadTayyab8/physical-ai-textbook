@@ -1,47 +1,59 @@
-# Physical AI & Humanoid Robotics Textbook
+# Physical AI & Humanoid Robotics Textbook with RAG Chatbot
 
-Welcome to the Physical AI & Humanoid Robotics Textbook project! This is a comprehensive educational resource combined with an AI-powered chatbot that leverages the textbook content to answer questions.
-
-## Overview
-
-This project consists of:
-- A Docusaurus-based frontend for the textbook content
-- A FastAPI backend with RAG (Retrieval-Augmented Generation) capabilities
-- Qdrant vector database for content indexing
-- PostgreSQL for metadata storage
+This repository implements a Retrieval-Augmented Generation (RAG) chatbot system for a Physical AI & Humanoid Robotics textbook. The system combines a Docusaurus-based frontend with a FastAPI backend to enable users to ask questions about textbook content and receive AI-generated answers based on the specific textbook material.
 
 ## Features
 
-- **Textbook Content**: Comprehensive chapters on Physical AI and Humanoid Robotics
-- **AI-Powered Q&A**: Ask questions about the textbook content and get AI-generated answers
-- **Search Functionality**: Search through textbook content using keywords
-- **Responsive Design**: Works on desktop, tablet, and mobile devices
-- **Fast Loading**: Optimized for performance and quick access
+- Interactive textbook with Docusaurus frontend
+- AI-powered Q&A chatbot with context from textbook content
+- Semantic search using vector embeddings
+- Session management and conversation history
+- Responsive design for multiple device sizes
+- Integration with Google's Gemini API for embeddings and language models
 
 ## Architecture
 
+The system consists of multiple components working together:
+
 ```
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+┌─────────────────────┐    ┌──────────────────┐    ┌─────────────────────┐
 │   Textbook      │    │   FastAPI        │    │   PostgreSQL    │
 │   Frontend      │───▶│   Backend        │───▶│   Database      │
-│   (Docusaurus)  │    │                  │    │                 │
+│                 │    │                  │    │ (Optional)      │
 └─────────────────┘    └──────────────────┘    └─────────────────┘
-                            │    ▲
-                            │    │
-                            ▼    │
-                       ┌─────────────┐
-                       │   Qdrant    │
-                       │ Vector DB   │
-                       └─────────────┘
+         │                         │    ▲                      │
+         │                         │    │                      │
+         │                         ▼    │                      │
+         │                    ┌─────────────┐                  │
+         │                    │   Qdrant    │                  │
+         │                    │ Vector DB   │                  │
+         │                    └─────────────┘                  │
+         │                         │                           │
+         │                         │                           │
+         └─────────────────────────┴───────────────────────────┘
 ```
+
+- **Frontend**: Docusaurus-based textbook interface with integrated chat UI
+- **Backend**: FastAPI service handling RAG logic and API requests
+- **PostgreSQL**: Stores metadata about textbook chapters, content blocks, and user sessions (Optional: can be disabled)
+- **Qdrant**: Vector database storing embeddings for semantic similarity search (Essential)
+- **Google Gemini APIs**: Used for generating embeddings and for the language model in the chatbot
+
+## Technology Stack
+
+- **Frontend**: React, Docusaurus, JavaScript/TypeScript
+- **Backend**: Python, FastAPI, Pydantic
+- **Vector DB**: Qdrant (Required for RAG functionality)
+- **SQL DB**: PostgreSQL (Optional for metadata, sessions, and feedback)
+- **AI/ML**: Google Gemini API (embeddings and language model)
+- **Infrastructure**: Docker, Docker Compose
 
 ## Prerequisites
 
 - Node.js (v18 or higher)
 - Python (v3.11 or higher)
 - Docker and Docker Compose
-- OpenAI API key
-- (Optional) Qdrant API key if using hosted Qdrant
+- Google API key
 
 ## Setup Instructions
 
@@ -61,10 +73,11 @@ Create a `.env` file in the project root with your API keys:
 cp .env.example .env
 
 # Edit the file with your actual keys
-OPENAI_API_KEY=your_openai_api_key_here
+GOOGLE_API_KEY=your_google_api_key_here
 QDRANT_URL=http://qdrant:6333  # Default for Docker setup
 QDRANT_API_KEY=your_qdrant_api_key_here  # If using hosted Qdrant
 DATABASE_URL=postgresql://textbook_user:textbook_password@db:5432/textbook_db
+USE_POSTGRESQL=true  # Set to "false" to disable PostgreSQL for simplified operation
 ```
 
 ### 3. Initialize the Development Environment
@@ -115,6 +128,37 @@ The backend API provides the following endpoints:
 - `GET /api/v1/chapters/slug/{slug}/content` - Get a specific chapter's content by slug
 - `POST /api/v1/chat/` - Ask questions about the textbook content
 - `GET /api/v1/search/` - Search through textbook content
+
+## Configuration
+
+The system uses environment variables for configuration. You can make PostgreSQL optional by setting the USE_POSTGRESQL environment variable:
+
+```
+# Google API Configuration
+GOOGLE_API_KEY=your_google_api_key_here
+
+# Qdrant Configuration (Required for RAG functionality)
+QDRANT_URL=http://qdrant:6333
+QDRANT_API_KEY=your_qdrant_api_key_here
+
+# Database Configuration (Optional - set to false to disable)
+DATABASE_URL=postgresql://textbook_user:textbook_password@db:5432/textbook_db
+USE_POSTGRESQL=true
+
+# Backend Configuration
+BACKEND_HOST=0.0.0.0
+BACKEND_PORT=8000
+
+# Frontend Configuration
+FRONTEND_HOST=0.0.0.0
+FRONTEND_PORT=3000
+```
+
+When `USE_POSTGRESQL` is set to "false", the system will operate without PostgreSQL. This means:
+- Session management will be simplified (no persistent sessions)
+- No storage of conversation history
+- No persistent feedback storage
+- The core RAG functionality (question answering based on textbook content) will still work
 
 ## Project Structure
 
@@ -170,6 +214,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Support
 
 If you encounter any issues or have questions, please file an issue in the GitHub repository.
-
-
-## Deploy Adding

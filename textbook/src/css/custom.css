@@ -197,3 +197,273 @@
   outline: 2px solid var(--ifm-color-primary);
   outline-offset: 2px;
 }
+
+/* Search page specific styles */
+.search-controls {
+  margin-bottom: 2rem;
+}
+
+.search-result-card {
+  padding: 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.search-result-card:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.search-result-link {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.search-result-link:hover {
+  text-decoration: underline;
+}
+
+.search-result-excerpt {
+  color: var(--textbook-color-text-light);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.search-result-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.search-result-relevance {
+  background-color: rgba(46, 133, 85, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.search-result-url {
+  color: var(--ifm-color-emphasis-500);
+  font-style: italic;
+}
+
+.loading-spinner {
+  font-size: 1.2rem;
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive design improvements */
+@media (max-width: 996px) {
+  /* Adjust main content width on medium screens */
+  .main-wrapper {
+    padding: 1rem;
+  }
+
+  /* Adjust navbar items for medium screens */
+  .navbar__item {
+    margin: 0 0.25rem;
+  }
+
+  /* Reduce font size slightly for readability on smaller screens */
+  .markdown {
+    font-size: calc(var(--textbook-font-size-base) * 0.95);
+  }
+
+  /* Adjust headings for medium screens */
+  .markdown h1 {
+    font-size: 1.8rem;
+  }
+
+  .markdown h2 {
+    font-size: 1.5rem;
+  }
+
+  .markdown h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Adjust search controls on medium screens */
+  .search-controls {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Further adjustments for smaller tablets */
+  .main-wrapper {
+    padding: 0.8rem;
+  }
+
+  /* Stack navbar items vertically if needed */
+  .navbar {
+    padding: 0.5rem 0;
+  }
+
+  .navbar__items {
+    flex-wrap: wrap;
+  }
+
+  /* Reduce font size on smaller screens */
+  .markdown {
+    font-size: calc(var(--textbook-font-size-base) * 0.9);
+  }
+
+  .markdown h1 {
+    font-size: 1.6rem;
+  }
+
+  .markdown h2 {
+    font-size: 1.4rem;
+  }
+
+  .markdown h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Stack search results vertically */
+  .search-result-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  /* Adjust grid layouts for smaller screens */
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  /* Better mobile-friendly padding for cards */
+  .search-result-card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Mobile phone specific adjustments */
+  .main-wrapper {
+    padding: 0.6rem;
+  }
+
+  /* Further reduce font size for mobile */
+  .markdown {
+    font-size: calc(var(--textbook-font-size-base) * 0.85);
+  }
+
+  .markdown h1 {
+    font-size: 1.5rem;
+  }
+
+  .markdown h2 {
+    font-size: 1.3rem;
+  }
+
+  .markdown h3 {
+    font-size: 1.1rem;
+  }
+
+  /* Adjust navigation items for mobile */
+  .navbar__item {
+    margin: 0 0.1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Make sure buttons are touch-friendly but not too big */
+  .button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Mobile-friendly search input */
+  .search-input {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  /* Stack search result items */
+  .search-result-card {
+    padding: 0.8rem;
+  }
+
+  .search-result-link {
+    font-size: 1.1rem;
+  }
+
+  /* Mobile-friendly layout for search results */
+  .search-results-list {
+    margin: 0 -0.5rem;
+  }
+
+  .search-result-card {
+    margin: 0 0.5rem 1rem 0.5rem;
+  }
+
+  /* Ensure proper spacing on mobile */
+  .margin-bottom--md {
+    margin-bottom: 0.8rem !important;
+  }
+
+  .padding--lg {
+    padding: 1rem !important;
+  }
+}
+
+/* Extra small devices (portrait phones) */
+@media (max-width: 375px) {
+  .markdown {
+    font-size: calc(var(--textbook-font-size-base) * 0.8);
+  }
+
+  .main-wrapper {
+    padding: 0.5rem;
+  }
+
+  .navbar__item {
+    font-size: 0.85rem;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  /* Adjustments for landscape mobile devices */
+  .navbar-sidebar__brand {
+    padding: 0.5rem;
+  }
+}
+
+/* Accessibility improvements for responsive design */
+@media (prefers-reduced-motion: reduce) {
+  .loading-spinner {
+    animation: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .navbar,
+  .menu,
+  .search-bar-container,
+  .footer {
+    display: none !important;
+  }
+
+  .main-wrapper {
+    padding: 0;
+  }
+
+  .markdown {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+}

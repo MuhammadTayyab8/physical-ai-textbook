@@ -178,3 +178,13 @@ The foundations of Physical AI and robotics encompass a wide range of mathematic
 1. Calculate the forward kinematics for a simple 2-DOF robotic arm
 2. Implement a basic PID controller for a simulated system
 3. Research and summarize one recent advancement in humanoid robot locomotion
+
+## Questions?
+
+Ask questions about this chapter using our AI textbook assistant:
+
+import ChatInterface from '@site/src/components/ChatInterface';
+
+<ChatInterface sessionId="foundations-chapter" />
+
+---

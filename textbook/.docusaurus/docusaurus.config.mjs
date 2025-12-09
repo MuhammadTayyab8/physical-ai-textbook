@@ -28,12 +28,38 @@ export default {
         "docs": {
           "sidebarPath": "./sidebars.js",
           "editUrl": "https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/",
-          "routeBasePath": "/docs"
+          "routeBasePath": "/docs",
+          "showLastUpdateTime": true,
+          "editCurrentVersion": true
         },
         "blog": false,
         "theme": {
           "customCss": "./src/css/custom.css"
+        },
+        "sitemap": {
+          "changefreq": "weekly",
+          "priority": 0.5,
+          "ignorePatterns": [
+            "/tags/**"
+          ],
+          "filename": "sitemap.xml"
         }
+      }
+    ]
+  ],
+  "plugins": [],
+  "themes": [
+    [
+      "@easyops-cn/docusaurus-search-local",
+      {
+        "hashed": true,
+        "language": [
+          "en"
+        ],
+        "indexDocs": true,
+        "indexPages": true,
+        "docsRouteBasePath": "/docs",
+        "highlightSearchTermsOnTargetPage": true
       }
     ]
   ],
@@ -41,6 +67,10 @@ export default {
     "image": "img/docusaurus-social-card.jpg",
     "navbar": {
       "title": "Physical AI Textbook",
+      "logo": {
+        "alt": "Physical AI & Humanoid Robotics Logo",
+        "src": "img/logo.svg"
+      },
       "items": [
         {
           "type": "docSidebar",
@@ -49,8 +79,17 @@ export default {
           "label": "Textbook Chapters"
         },
         {
+          "to": "/",
+          "label": "Home",
+          "position": "left"
+        },
+        {
           "href": "https://github.com/MuhammadTayyab8/hackathon-1",
           "label": "GitHub",
+          "position": "right"
+        },
+        {
+          "type": "search",
           "position": "right"
         }
       ],
@@ -328,14 +367,11 @@ export default {
     }
   },
   "baseUrlIssueBanner": true,
-  "onBrokenAnchors": "warn",
   "onDuplicateRoutes": "warn",
   "staticDirectories": [
     "static"
   ],
   "customFields": {},
-  "plugins": [],
-  "themes": [],
   "scripts": [],
   "headTags": [],
   "stylesheets": [],
@@ -343,12 +379,6 @@ export default {
   "titleDelimiter": "|",
   "noIndex": false,
   "markdown": {
-    "format": "mdx",
-    "mermaid": false,
-    "mdx1Compat": {
-      "comments": true,
-      "admonitions": true,
-      "headingIds": true
-    }
+    "mermaid": false
   }
 };

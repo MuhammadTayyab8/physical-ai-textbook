@@ -9,10 +9,10 @@
           "badge": false,
           "noIndex": false,
           "className": "docs-version-current",
-          "path": "/docs",
-          "tagsPath": "/docs/tags",
-          "editUrl": "https://github.com/your-organization/physical-ai-textbook/docs",
-          "editUrlLocalized": "https://github.com/your-organization/physical-ai-textbook/i18n/en/docusaurus-plugin-content-docs/current",
+          "path": "/hackathon-1/docs",
+          "tagsPath": "/hackathon-1/docs/tags",
+          "editUrl": "https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/docs",
+          "editUrlLocalized": "https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/i18n/en/docusaurus-plugin-content-docs/current",
           "isLast": true,
           "routePriority": -1,
           "sidebarFilePath": "D:\\Tayyab\\AI-Hackathon\\hackathon-1\\textbook\\sidebars.js",
@@ -20,18 +20,20 @@
           "contentPathLocalized": "D:\\Tayyab\\AI-Hackathon\\hackathon-1\\textbook\\i18n\\en\\docusaurus-plugin-content-docs\\current",
           "docs": [
             {
+              "unversionedId": "foundations",
               "id": "foundations",
               "title": "Foundations of Physical AI and Robotics",
               "description": "Explore the foundational concepts of Physical AI and Robotics",
               "source": "@site/docs/foundations.md",
               "sourceDirName": ".",
               "slug": "/foundations",
-              "permalink": "/docs/foundations",
+              "permalink": "/hackathon-1/docs/foundations",
               "draft": false,
-              "unlisted": false,
-              "editUrl": "https://github.com/your-organization/physical-ai-textbook/docs/foundations.md",
+              "editUrl": "https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/docs/foundations.md",
               "tags": [],
               "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
               "sidebarPosition": 2,
               "frontMatter": {
                 "sidebar_label": "Foundations",
@@ -42,26 +44,28 @@
               "sidebar": "textbookSidebar",
               "previous": {
                 "title": "Introduction",
-                "permalink": "/docs/introduction"
+                "permalink": "/hackathon-1/docs/introduction"
               },
               "next": {
                 "title": "Locomotion Systems",
-                "permalink": "/docs/locomotion"
+                "permalink": "/hackathon-1/docs/locomotion"
               }
             },
             {
+              "unversionedId": "introduction",
               "id": "introduction",
               "title": "Introduction to Physical AI & Humanoid Robotics",
               "description": "Learn about the fundamentals of Physical AI and Humanoid Robotics",
               "source": "@site/docs/introduction.md",
               "sourceDirName": ".",
               "slug": "/introduction",
-              "permalink": "/docs/introduction",
+              "permalink": "/hackathon-1/docs/introduction",
               "draft": false,
-              "unlisted": false,
-              "editUrl": "https://github.com/your-organization/physical-ai-textbook/docs/introduction.md",
+              "editUrl": "https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/docs/introduction.md",
               "tags": [],
               "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
               "sidebarPosition": 1,
               "frontMatter": {
                 "sidebar_label": "Introduction",
@@ -72,22 +76,24 @@
               "sidebar": "textbookSidebar",
               "next": {
                 "title": "Introduction",
-                "permalink": "/docs/introduction"
+                "permalink": "/hackathon-1/docs/introduction"
               }
             },
             {
+              "unversionedId": "locomotion",
               "id": "locomotion",
               "title": "Locomotion Systems in Humanoid Robots",
               "description": "Understanding locomotion systems and control strategies in humanoid robots",
               "source": "@site/docs/locomotion.md",
               "sourceDirName": ".",
               "slug": "/locomotion",
-              "permalink": "/docs/locomotion",
+              "permalink": "/hackathon-1/docs/locomotion",
               "draft": false,
-              "unlisted": false,
-              "editUrl": "https://github.com/your-organization/physical-ai-textbook/docs/locomotion.md",
+              "editUrl": "https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/docs/locomotion.md",
               "tags": [],
               "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
               "sidebarPosition": 3,
               "frontMatter": {
                 "sidebar_label": "Locomotion Systems",
@@ -98,7 +104,7 @@
               "sidebar": "textbookSidebar",
               "previous": {
                 "title": "Foundations",
-                "permalink": "/docs/foundations"
+                "permalink": "/hackathon-1/docs/foundations"
               }
             }
           ],
@@ -155,25 +161,30 @@
     "default": [
       {
         "type": "jsx",
-        "permalink": "/",
+        "permalink": "/hackathon-1/",
         "source": "@site/src/pages/index.js"
       },
       {
         "type": "mdx",
-        "permalink": "/",
+        "permalink": "/hackathon-1/",
         "source": "@site/src/pages/index.md",
         "title": "Physical AI & Humanoid Robotics Textbook",
         "description": "Welcome to the comprehensive textbook on Physical AI and Humanoid Robotics. This resource provides in-depth coverage of the field, from fundamental concepts to advanced applications.",
         "frontMatter": {
           "title": "Physical AI & Humanoid Robotics Textbook",
           "hide_table_of_contents": true
-        },
-        "unlisted": false
+        }
+      },
+      {
+        "type": "jsx",
+        "permalink": "/hackathon-1/search",
+        "source": "@site/src/pages/search.js"
       }
     ]
   },
   "docusaurus-plugin-debug": {},
   "docusaurus-theme-classic": {},
+  "@easyops-cn/docusaurus-search-local": {},
   "docusaurus-bootstrap-plugin": {},
   "docusaurus-mdx-fallback-plugin": {}
 }

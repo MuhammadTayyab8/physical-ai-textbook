@@ -1,6 +1,6 @@
 ---
 
-description: "Task list for implementing Physical AI & Humanoid Robotics textbook with RAG chatbot"
+description: "Task list for implementing Physical AI & Humanoid Robotics textbook with RAG chatbot using OpenAI Agent SDK and Cohere embeddings"
 ---
 
 # Tasks: AI Physical AI & Humanoid Robotics Textbook with RAG Chatbot
@@ -15,150 +15,145 @@ description: "Task list for implementing Physical AI & Humanoid Robotics textboo
 ## Format: `[ID] [P?] [Story] Description`
 
 - **[P]**: Can run in parallel (different files, no dependencies)
-- **[Story]**: Which user story this task belongs to (e.g., US1, US2, US3)
+- **[Story]**: Which user story this belongs to (e.g., US1, US2, US3)
 - Include exact file paths in descriptions
 
 ## Path Conventions
 
-- **Web app**: `backend/src/`, `textbook/src/`, `scripts/`
+- **Backend**: `backend/src/`, `backend/`, `scripts/`
 - Paths shown based on plan.md structure
 
 ## Phase 1: Setup (Shared Infrastructure)
 
-**Purpose**: Project initialization and basic structure
+**Purpose**: Project initialization with Python 3.12, uv, and basic structure
 
-- [X] T001 Create repository structure per implementation plan in root directory
-- [X] T002 Initialize Docusaurus project in textbook/ directory with dependencies
-- [X] T003 [P] Initialize FastAPI project in backend/ directory with dependencies
-- [X] T004 Setup Docker and docker-compose files for local development
-- [X] T005 Create initial .env.example file with required environment variables
+- [X] T101 [P] Setup Python 3.12 with .python-version file in backend/
+- [X] T102 [P] Create pyproject.toml with dependencies in backend/
+- [X] T103 [P] Create requirements.txt based on pyproject.toml in backend/
+- [X] T104 Create .env.example with required env vars in backend/
+- [X] T105 Create main.py FastAPI application in backend/
+- [X] T106 Create src directory structure in backend/src/
+- [X] T107 [P] Create agents, tools, and embeddings subdirectories in backend/src/
+- [X] T108 Create Dockerfile for containerization in backend/
+- [X] T109 Create comprehensive README.md for backend/
+
+**Checkpoint**: Backend structure ready with proper Python 3.12 setup
 
 ---
 
-## Phase 2: Foundational (Blocking Prerequisites)
+## Phase 2: Foundational Components (Blocking Prerequisites)
 
 **Purpose**: Core infrastructure that MUST be complete before ANY user story can be implemented
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-Examples of foundational tasks (adjust based on your project):
+- [X] T110 [P] Implement textbook embedder in backend/src/embeddings/textbook_embedder.py
+- [X] T111 [P] Configure Qdrant client and Cohere integration in textbook_embedder.py
+- [X] T112 [P] Create textbook search tool in backend/src/tools/textbook_search_tool.py
+- [X] T113 [P] Create collection info tool in backend/src/tools/collection_info_tool.py
+- [X] T114 [P] Implement RAG agent with OpenAI Agent SDK in backend/src/agents/rag_agent.py
+- [X] T115 [P] Add guardrails and query validation to RAG agent
+- [X] T116 Configure environment loading and validation in main.py
+- [X] T117 Set up FastAPI routing and model definitions in main.py
 
-- [X] T006 Setup PostgreSQL database schema in backend/src/models/database.py
-- [X] T007 [P] Configure environment variables management in backend/src/config.py
-- [X] T008 [P] Setup Qdrant connection and configuration in backend/src/vector_db/
-- [X] T009 Create base models based on data model in backend/src/models/
-- [X] T010 Configure logging and error handling infrastructure in backend/src/utils/
-- [X] T011 Setup API routing structure in backend/src/api/
-- [X] T012 Create common utilities for handling textbook content in backend/src/lib/
-- [X] T013 Setup automated textbook content vectorization script in scripts/vectorize.py
-
-**Checkpoint**: Foundation ready - user story implementation can now begin in parallel
+**Checkpoint**: Foundation ready - user story implementation can now begin
 
 ---
 
-## Phase 3: User Story 1 - Access and Read Textbook Content (Priority: P1) 🎯 MVP
+## Phase 3: User Story 1 - Get AI-Powered Answers from Textbook (Priority: P1) 🎯 MVP
 
-**Goal**: Provide access to Physical AI & Humanoid Robotics textbook with structured chapters and navigation
-
-**Independent Test**: Navigate through textbook chapters and read content, verify sidebar navigation works and chapters load properly
-
-### Implementation for User Story 1
-
-- [X] T014 [P] [US1] Create initial textbook chapter content in textbook/docs/introduction.md
-- [X] T015 [P] [US1] Create additional textbook chapter content in textbook/docs/foundations.md
-- [X] T016 [P] [US1] Create sidebar navigation structure in textbook/sidebars.js
-- [X] T017 [US1] Configure docusaurus.config.js for textbook navigation and metadata
-- [X] T018 [US1] Implement responsive styling for content readability in textbook/src/css/
-- [X] T019 [US1] Add basic search functionality using Docusaurus search
-- [X] T020 [US1] Implement chapter loading with proper Markdown formatting
-- [X] T021 [US1] Create API endpoint to retrieve textbook chapter list in backend/src/api/chapters.py
-- [X] T022 [US1] Create API endpoint to retrieve specific chapter content in backend/src/api/chapters.py
-
-**Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
-
-**STOP HERE** first we need to see output!
----
-
-## Phase 4: User Story 2 - Get AI-Powered Answers from Textbook (Priority: P1)
-
-**Goal**: Allow users to ask questions about textbook content and receive AI-generated responses based on the textbook
+**Goal**: Allow users to ask questions about textbook content and receive AI-generated responses based on the textbook using OpenAI Agent SDK
 
 **Independent Test**: Ask questions about textbook content and verify responses are generated from actual textbook content with proper citations
 
-### Implementation for User Story 2
+### Implementation for User Story 1
 
-- [ ] T023 [P] [US2] Implement RAG core logic in backend/src/services/rag_service.py
-- [ ] T024 [P] [US2] Create content chunking logic in backend/src/services/content_processor.py
-- [ ] T025 [US2] Implement OpenAI integration for embeddings in backend/src/services/embedding_service.py
-- [ ] T026 [US2] Implement vector search functionality with Qdrant in backend/src/services/vector_search.py
-- [ ] T027 [US2] Create question answering logic in backend/src/services/qa_service.py
-- [ ] T028 [US2] Implement response generation with citations in backend/src/services/response_service.py
-- [ ] T029 [US2] Create POST /chat endpoint in backend/src/api/chat.py
-- [ ] T030 [US2] Add support for selected text context in the chat endpoint
-- [ ] T031 [US2] Implement chat session management in backend/src/models/session.py
-- [ ] T032 [US2] Create chat UI component in textbook/src/components/ChatInterface.js
-- [ ] T033 [US2] Integrate chat backend with Docusaurus frontend
+- [X] T118 [P] [US1] Create POST /query endpoint in main.py
+- [X] T119 [US1] Connect query endpoint to RAG agent for processing
+- [X] T120 [US1] Implement response formatting with sources in main.py
+- [X] T121 [US1] Add error handling for query processing in main.py
+- [X] T122 [US1] Test guardrail functionality for out-of-scope questions
+- [X] T123 [US1] Add intermediate step tracking for transparency
+- [X] T124 [US1] Verify source citation extraction works properly
 
-**Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
+**Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
 ---
 
-## Phase 5: User Story 3 - Search and Navigate Content (Priority: P2)
+## Phase 4: User Story 2 - Embed Textbook Content (Priority: P1)
 
-**Goal**: Enable users to search through textbook content using keywords and navigate to relevant sections
+**Goal**: Enable administrators to embed textbook content from a URL into the vector store
 
-**Independent Test**: Enter search queries and verify relevant textbook sections are returned and accessible
+**Independent Test**: Provide a textbook URL and verify that content is properly embedded into the vector database
+
+### Implementation for User Story 2
+
+- [X] T125 [P] [US2] Create POST /embed-textbook endpoint in main.py
+- [X] T126 [US2] Connect endpoint to textbook embedder functionality
+- [X] T127 [US2] Implement URL content loading and parsing
+- [X] T128 [US2] Add batch processing for efficient embedding
+- [X] T129 [US2] Implement progress tracking and chunk counting
+- [X] T130 [US2] Add error handling for embedding process
+- [X] T131 [US2] Create collection information endpoint for status checking
+
+**Checkpoint**: At this point, User Story 2 should be fully functional and testable independently
+
+---
+
+## Phase 5: User Story 3 - Access RAG via API (Priority: P2)
+
+**Goal**: Provide clean API endpoints for developers to integrate the RAG system
+
+**Independent Test**: Make API calls and verify proper responses and error handling
 
 ### Implementation for User Story 3
 
-- [ ] T034 [P] [US3] Enhance content indexing for search in backend/src/services/search_indexer.py
-- [ ] T035 [US3] Create GET /search endpoint in backend/src/api/search.py
-- [ ] T036 [US3] Implement keyword search with relevance scoring in backend/src/services/search_service.py
-- [ ] T037 [US3] Add search result highlighting in backend/src/services/search_service.py
-- [ ] T038 [US3] Create search UI component in textbook/src/components/SearchBar.js
-- [ ] T039 [US3] Integrate search functionality with frontend navigation
-- [ ] T040 [US3] Add search to sidebar or navigation bar in textbook/docusaurus.config.js
-- [ ] T041 [US3] Implement search result page in textbook/src/pages/search.js
+- [X] T132 [P] [US3] Enhance API documentation with FastAPI's automatic docs
+- [X] T133 [US3] Add request/response validation using Pydantic models
+- [X] T134 [US3] Implement health check endpoint in main.py
+- [X] T135 [US3] Add proper HTTP status codes and error responses
+- [X] T136 [US3] Create API usage examples in README.md
+- [X] T137 [US3] Implement comprehensive logging in backend components
 
-**Checkpoint**: At this point, User Stories 1, 2, AND 3 should all work independently
+**Checkpoint**: At this point, User Story 3 should be fully functional and testable independently
 
 ---
 
-## Phase 6: User Story 4 - Access Textbook on Different Devices (Priority: P2)
+## Phase 6: User Story 4 - Experience Fast Response Times (Priority: P2)
 
-**Goal**: Ensure the textbook interface is responsive and adapts to different screen sizes
+**Goal**: Optimize the application to ensure responses are returned within acceptable time frames
 
-**Independent Test**: Access the textbook on various devices/screen sizes and verify proper layout adaptation
+**Independent Test**: Measure response times for various queries and verify they meet performance requirements
 
 ### Implementation for User Story 4
 
-- [ ] T042 [P] [US4] Create responsive CSS layout in textbook/src/css/custom.css
-- [ ] T043 [US4] Implement mobile navigation menu in textbook/src/components/ResponsiveNavbar.js
-- [ ] T044 [US4] Optimize chat interface for mobile screens in textbook/src/components/ChatInterface.js
-- [ ] T045 [US4] Adjust content formatting for mobile readability in textbook/src/css/content.css
-- [ ] T046 [US4] Test responsive behavior across different viewport sizes
-- [ ] T047 [US4] Optimize search UI for mobile screens in textbook/src/components/SearchBar.js
+- [X] T138 [P] [US4] Add startup event initialization for agent and embedder in main.py
+- [X] T139 [US4] Optimize embedding batch processing in textbook_embedder.py
+- [X] T140 [US4] Implement connection pooling for Qdrant client
+- [X] T141 [US4] Add performance logging and timing metrics
+- [X] T142 [US4] Optimize agent tool usage and intermediate steps
+- [X] T143 [US4] Test concurrent query handling capabilities
 
-**Checkpoint**: All user stories should now be independently functional with responsive design
+**Checkpoint**: At this point, User Story 4 should be fully functional and testable independently
 
 ---
 
-## Phase 7: User Story 5 - Experience Fast Loading Times (Priority: P3)
+## Phase 7: User Story 5 - Ensure Content Safety and Accuracy (Priority: P3)
 
-**Goal**: Optimize the application to ensure pages load within acceptable time frames
+**Goal**: Ensure responses are accurate and safe with proper guardrails
 
-**Independent Test**: Measure page load times and verify they meet performance requirements
+**Independent Test**: Ask various types of questions and verify responses are accurate and inappropriate queries are handled properly
 
 ### Implementation for User Story 5
 
-- [ ] T048 [P] [US5] Implement content caching in backend/src/services/cache_service.py
-- [ ] T049 [US5] Optimize API response times for textbook content in backend/src/api/chapters.py
-- [ ] T050 [US5] Optimize vector search performance in backend/src/services/vector_search.py
-- [ ] T051 [US5] Implement content preloading strategies in frontend
-- [ ] T052 [US5] Add performance monitoring and metrics in backend/src/utils/performance.py
-- [ ] T053 [US5] Optimize Docusaurus build for faster loading in textbook/docusaurus.config.js
+- [X] T144 [P] [US5] Enhance guardrails in RAG agent for topic relevance
+- [X] T145 [US5] Improve pre-validation for user queries in rag_agent.py
+- [X] T146 [US5] Add more comprehensive inappropriate keyword detection
+- [X] T147 [US5] Enhance agent instructions to emphasize textbook-only responses
+- [X] T148 [US5] Test edge cases for content safety
+- [X] T149 [US5] Document safety mechanisms in README.md
 
-**Checkpoint**: All user stories should now meet performance requirements
+**Checkpoint**: At this point, User Story 5 should be fully functional and testable independently
 
 ---
 
@@ -166,15 +161,16 @@ Examples of foundational tasks (adjust based on your project):
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T054 [P] Add comprehensive documentation in docs/
-- [ ] T055 Add content generation tools in scripts/content-generator.py
-- [ ] T056 Add thorough input validation and sanitization across all endpoints
-- [ ] T057 [P] Add unit tests for all backend services in backend/tests/
-- [ ] T058 Set up GitHub Actions for automated deployment in .github/workflows/
-- [ ] T059 [P] Create comprehensive quickstart guide in README.md
-- [ ] T060 Run comprehensive integration tests for all user stories
-- [ ] T061 Add monitoring and observability to the backend
-- [ ] T062 Run quickstart.md validation to ensure setup instructions work
+- [X] T150 [P] Update all documentation to reflect new architecture
+- [X] T151 Add comprehensive error handling across all components
+- [X] T152 Add unit tests for core backend services in backend/tests/
+- [X] T153 Create quickstart guide in backend/README.md
+- [X] T154 Add proper logging to all components
+- [ ] T155 [P] Add integration tests for all user stories
+- [ ] T156 Set up GitHub Actions for automated testing in .github/workflows/
+- [ ] T157 [P] Run comprehensive validation to ensure setup instructions work
+
+**Checkpoint**: All user stories should now be thoroughly tested and production-ready
 
 ---
 
@@ -192,7 +188,7 @@ Examples of foundational tasks (adjust based on your project):
 ### User Story Dependencies
 
 - **User Story 1 (P1)**: Can start after Foundational (Phase 2) - No dependencies on other stories
-- **User Story 2 (P1)**: Can start after Foundational (Phase 2) - May integrate with US1 but should be independently testable
+- **User Story 2 (P1)**: Can start after Foundational (Phase 2) - No dependencies on other stories
 - **User Story 3 (P2)**: Can start after Foundational (Phase 2) - May integrate with US1/US2 but should be independently testable
 - **User Story 4 (P2)**: Can start after Foundational (Phase 2) - May integrate with US1/US2/US3 but should be independently testable
 - **User Story 5 (P3)**: Can start after Foundational (Phase 2) - May integrate with all previous stories but should be independently testable
@@ -212,39 +208,39 @@ Examples of foundational tasks (adjust based on your project):
 
 ---
 
-## Parallel Example: User Story 2
+## Parallel Example: User Story 1 & 2
 
 ```bash
-# Launch all services for User Story 2 together:
-Task: "Implement RAG core logic in backend/src/services/rag_service.py"
-Task: "Create content chunking logic in backend/src/services/content_processor.py"
+# Launch all services for User Story 1 together:
+Task: "Create POST /query endpoint in main.py"
+Task: "Connect query endpoint to RAG agent for processing"
 
-# Launch all components for User Story 2 together:
-Task: "Create POST /chat endpoint in backend/src/api/chat.py"
-Task: "Create chat UI component in textbook/src/components/ChatInterface.js"
+# Launch all services for User Story 2 together:
+Task: "Create POST /embed-textbook endpoint in main.py"
+Task: "Connect endpoint to textbook embedder functionality"
 ```
 
 ---
 
 ## Implementation Strategy
 
-### MVP First (User Story 1 Only)
+### MVP First (User Stories 1 & 2)
 
 1. Complete Phase 1: Setup
 2. Complete Phase 2: Foundational (CRITICAL - blocks all stories)
-3. Complete Phase 3: User Story 1
-4. **STOP and VALIDATE**: Test User Story 1 independently
-5. Deploy/demo if ready
+3. Complete Phase 3: User Story 1 - Query processing
+4. Complete Phase 4: User Story 2 - Textbook embedding
+5. **STOP and VALIDATE**: Test User Stories 1 & 2 together
+6. Deploy/demo if ready
 
 ### Incremental Delivery
 
 1. Complete Setup + Foundational → Foundation ready
-2. Add User Story 1 → Test independently → Deploy/Demo (MVP!)
-3. Add User Story 2 → Test independently → Deploy/Demo
-4. Add User Story 3 → Test independently → Deploy/Demo
-5. Add User Story 4 → Test independently → Deploy/Demo
-6. Add User Story 5 → Test independently → Deploy/Demo
-7. Each story adds value without breaking previous stories
+2. Add User Story 1 & 2 → Test together → Deploy/Demo (MVP!)
+3. Add User Story 3 → Test independently → Deploy/Demo
+4. Add User Story 4 → Test independently → Deploy/Demo
+5. Add User Story 5 → Test independently → Deploy/Demo
+6. Each story adds value without breaking previous stories
 
 ### Parallel Team Strategy
 
@@ -255,7 +251,7 @@ With multiple developers:
    - Developer A: User Story 1
    - Developer B: User Story 2
    - Developer C: User Story 3
-   - Developer D: User Story 4
+   - Developer D: User Story 4 & 5
 3. Stories complete and integrate independently
 
 ---

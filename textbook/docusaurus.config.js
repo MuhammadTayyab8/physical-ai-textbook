@@ -8,9 +8,9 @@ const config = {
   favicon: 'img/favicon.ico',
 
   url: 'https://MuhammadTayyab8.github.io',
-  baseUrl: '/physical-ai-textbook/',     // <- must match repo name
+  baseUrl: '/hackathon-1/',     // <- must match repo name
   organizationName: 'MuhammadTayyab8',
-  projectName: 'physical-ai-textbook',   // <- must match repo name
+  projectName: 'hackathon-1',   // <- must match repo name
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -35,12 +35,48 @@ const config = {
           editUrl:
             'https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/',
           routeBasePath: '/docs', // This ensures docs are served from /docs
+          showLastUpdateTime: true,
+          editCurrentVersion: true,
         },
         blog: false, // Disable blog if not needed
         theme: {
           customCss: './src/css/custom.css',
         },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+        },
       }),
+    ],
+  ],
+
+  plugins: [
+    // Additional plugins can be added here
+  ],
+
+  themes: [
+    // Add search functionality
+    [
+      "@easyops-cn/docusaurus-search-local",
+      {
+        // ... Your options.
+        // `hashed` is recommended as long-term-cache of index file is possible.
+        hashed: true,
+        // For Docs using Chinese, The `language` is recommended to set to:
+        // ```
+        // language: ["en", "zh"],
+        // ```
+        language: ["en"],
+        // Optional: To Index Page contents.
+        indexDocs: true,
+        indexPages: true,
+        // Optional: To set relative paths to search engine.
+        docsRouteBasePath: "/docs",
+        // Optional: To specify the max length of highlight text.
+        highlightSearchTermsOnTargetPage: true,
+      },
     ],
   ],
 
@@ -51,10 +87,10 @@ const config = {
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'Physical AI Textbook',
-        // logo: {
-        //   alt: 'Physical AI & Humanoid Robotics Logo',
-        //   src: 'img/logo.svg',
-        // },
+        logo: {
+          alt: 'Physical AI & Humanoid Robotics Logo',
+          src: 'img/logo.svg',
+        },
         items: [
           {
             type: 'docSidebar',
@@ -62,14 +98,18 @@ const config = {
             position: 'left',
             label: 'Textbook Chapters',
           },
-          // {
-          //   to: '/',
-          //   label: 'Home',
-          //   position: 'left',
-          // },
+          {
+            to: '/',
+            label: 'Home',
+            position: 'left',
+          },
           {
             href: 'https://github.com/MuhammadTayyab8/hackathon-1',
             label: 'GitHub',
+            position: 'right',
+          },
+          {
+            type: 'search', // Add search bar to navbar
             position: 'right',
           },
         ],
@@ -118,8 +158,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Textbook. Built with Docusaurus.`,
       },
       prism: {
-        theme: require('prism-react-renderer').themes.github,
-        darkTheme: require('prism-react-renderer').themes.dracula,
+        theme: require('prism-react-renderer/themes/github'),
+        darkTheme: require('prism-react-renderer/themes/dracula'),
       },
     }),
 };

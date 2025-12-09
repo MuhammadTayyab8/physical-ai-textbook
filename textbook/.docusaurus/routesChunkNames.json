@@ -1,41 +1,91 @@
 {
-  "/hackathon-1/docs-bbc": {
-    "__comp": "5e95c892",
+  "/hackathon-1/__docusaurus/debug-620": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "40bf28ed"
+      "plugin": "plugin---hackathon-1-docusaurus-debugd-55-bb7"
     }
   },
-  "/hackathon-1/docs-cd5": {
-    "__comp": "a7bd4aaa",
-    "version": "935f2afb"
+  "/hackathon-1/__docusaurus/debug/config-afa": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---hackathon-1-docusaurus-debugd-55-bb7"
+    }
   },
-  "/hackathon-1/docs-627": {
-    "__comp": "a94703ab"
+  "/hackathon-1/__docusaurus/debug/content-d14": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---hackathon-1-docusaurus-debugd-55-bb7"
+    },
+    "allContent": "allContent---hackathon-1-docusaurus-debug-content-246-cab"
+  },
+  "/hackathon-1/__docusaurus/debug/globalData-2a1": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---hackathon-1-docusaurus-debugd-55-bb7"
+    }
+  },
+  "/hackathon-1/__docusaurus/debug/metadata-83a": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---hackathon-1-docusaurus-debugd-55-bb7"
+    }
+  },
+  "/hackathon-1/__docusaurus/debug/registry-779": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---hackathon-1-docusaurus-debugd-55-bb7"
+    }
+  },
+  "/hackathon-1/__docusaurus/debug/routes-377": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---hackathon-1-docusaurus-debugd-55-bb7"
+    }
+  },
+  "/hackathon-1/search-d35": {
+    "__comp": "__comp---site-src-pages-search-js-18-c-30a",
+    "__context": {
+      "plugin": "plugin---hackathon-1-search-087-60c"
+    },
+    "config": "config---hackathon-1-search-5-e-9-38b"
+  },
+  "/hackathon-1/search-0e3": {
+    "__comp": "__comp---theme-search-page-1-a-4-d6f",
+    "__context": {
+      "plugin": "plugin---hackathon-1-search-54-b-b92"
+    }
+  },
+  "/hackathon-1/docs-4a6": {
+    "__comp": "__comp---theme-doc-page-1-be-9be",
+    "__context": {
+      "plugin": "plugin---hackathon-1-docs-40-b-a1f"
+    },
+    "versionMetadata": "versionMetadata---hackathon-1-docs-935-b15"
   },
   "/hackathon-1/docs/foundations-ff0": {
-    "__comp": "17896441",
-    "content": "b15cc1c6"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---hackathon-1-docs-foundationsb-15-95d"
   },
   "/hackathon-1/docs/introduction-915": {
-    "__comp": "17896441",
-    "content": "a09c2993"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---hackathon-1-docs-introductiona-09-379"
   },
   "/hackathon-1/docs/locomotion-f6d": {
-    "__comp": "17896441",
-    "content": "3841aa9c"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---hackathon-1-docs-locomotion-384-861"
   },
   "/hackathon-1/-b60": {
-    "__comp": "c4f5d8e4",
+    "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
     "__context": {
-      "plugin": "08794990"
+      "plugin": "plugin---hackathon-1-search-087-60c"
     },
-    "config": "5e9f5e1a"
+    "config": "config---hackathon-1-search-5-e-9-38b"
   },
   "/hackathon-1/-da2": {
-    "__comp": "1f391b9e",
+    "__comp": "__comp---theme-mdx-page-1-f-3-b90",
     "__context": {
-      "plugin": "08794990"
+      "plugin": "plugin---hackathon-1-search-087-60c"
     },
-    "content": "f3976560"
+    "content": "content---hackathon-1-f-39-469"
   }
 }

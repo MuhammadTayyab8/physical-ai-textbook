@@ -174,3 +174,13 @@ Locomotion in humanoid robots is a complex interplay of mechanical design, contr
 ## Summary
 
 This chapter covered the fundamental concepts of humanoid robot locomotion, from basic principles like ZMP to advanced control strategies. Understanding these concepts is crucial for designing effective walking robots. The next chapter will explore manipulation systems for humanoid robots.
+
+## Questions?
+
+Ask questions about this chapter using our AI textbook assistant:
+
+import ChatInterface from '@site/src/components/ChatInterface';
+
+<ChatInterface sessionId="locomotion-chapter" />
+
+---

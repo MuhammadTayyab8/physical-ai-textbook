@@ -1,4 +1,5 @@
 {
+  "unversionedId": "foundations",
   "id": "foundations",
   "title": "Foundations of Physical AI and Robotics",
   "description": "Explore the foundational concepts of Physical AI and Robotics",
@@ -7,10 +8,11 @@
   "slug": "/foundations",
   "permalink": "/hackathon-1/docs/foundations",
   "draft": false,
-  "unlisted": false,
   "editUrl": "https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/docs/foundations.md",
   "tags": [],
   "version": "current",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "Oct 14, 2018",
   "sidebarPosition": 2,
   "frontMatter": {
     "sidebar_label": "Foundations",

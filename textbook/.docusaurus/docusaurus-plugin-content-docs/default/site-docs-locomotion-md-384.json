@@ -1,4 +1,5 @@
 {
+  "unversionedId": "locomotion",
   "id": "locomotion",
   "title": "Locomotion Systems in Humanoid Robots",
   "description": "Understanding locomotion systems and control strategies in humanoid robots",
@@ -7,10 +8,11 @@
   "slug": "/locomotion",
   "permalink": "/hackathon-1/docs/locomotion",
   "draft": false,
-  "unlisted": false,
   "editUrl": "https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/docs/locomotion.md",
   "tags": [],
   "version": "current",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "Oct 14, 2018",
   "sidebarPosition": 3,
   "frontMatter": {
     "sidebar_label": "Locomotion Systems",

@@ -60,3 +60,13 @@ For readers with prior experience in robotics or AI, feel free to skip to chapte
 ## Next Steps
 
 Continue to the next chapter to explore the fundamentals of robotics and AI that form the basis of Physical AI systems.
+
+## Questions?
+
+Ask questions about this chapter using our AI textbook assistant:
+
+import ChatInterface from '@site/src/components/ChatInterface';
+
+<ChatInterface sessionId="introduction-chapter" />
+
+---
