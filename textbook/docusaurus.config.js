@@ -63,18 +63,20 @@ const config = {
   themes: [
     [
       "@easyops-cn/docusaurus-search-local",
-      {
+      /** @type {import('@easyops-cn/docusaurus-search-local')} */
+      ({
+        // Hashed is the only thing that makes it work reliably on GitHub Pages
         hashed: true,
+        // These two lines are CRITICAL to stop the "Cannot read properties of undefined (reading 'load')" crash
+        highlightSearchTermsOnTargetPage: false,
+        explicitSearchResultPath: true,
+        // Keep your other settings
         language: ["en"],
         docsRouteBasePath: "/docs",
         indexDocs: true,
-        indexBlog: false,  // Disable blog indexing
-        indexPages: false, // Disable page indexing - this might prevent the error
-        ignoreFiles: [     // Exclude files that might be causing parsing issues
-          "manipulation.md",
-          "hri.md"
-        ],
-      },
+        indexBlog: false,
+        indexPages: false,
+      }),
     ],
   ],
 
@@ -87,7 +89,7 @@ const config = {
         title: 'Physical AI Textbook',
         // logo: {
         //   alt: 'Physical AI & Humanoid Robotics Logo',
-          // src: 'img/logo.svg',
+        // src: 'img/logo.svg',
         // },
         items: [
           {
