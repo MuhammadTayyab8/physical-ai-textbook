@@ -85,7 +85,7 @@ const ChatInterface = ({ sessionId }) => {
       // Add error message to the chat
       const errorMessage = {
         id: Date.now(),
-        text: 'Sorry, I encountered an error processing your question. Please try again.',
+        text: 'Server is busy. Please try again later.',
         sender: 'error',
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
@@ -185,6 +185,7 @@ const ChatInterface = ({ sessionId }) => {
             <small>Context: "{selectedText.substring(0, 80)}{selectedText.length > 80 ? '...' : ''}"</small>
           </div>
         )}
+
         <div className={styles['input-area']}>
           <textarea
             ref={textareaRef}
@@ -203,6 +204,7 @@ const ChatInterface = ({ sessionId }) => {
             {isLoading ? '→' : '→'}
           </button>
         </div>
+        
       </form>
     </div>
   );

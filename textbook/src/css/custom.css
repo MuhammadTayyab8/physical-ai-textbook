@@ -308,7 +308,7 @@
 
   /* Stack navbar items vertically if needed */
   .navbar {
-    padding: 0.5rem 0;
+    padding: 1rem 1rem;
   }
 
   .navbar__items {

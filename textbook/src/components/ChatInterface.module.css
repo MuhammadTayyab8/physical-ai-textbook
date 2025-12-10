@@ -236,9 +236,14 @@ input:focus, textarea:focus {
     max-width: 90%;
   }
 
-  .input-area {
+  /* .input-area {
     flex-direction: column;
+  } */
+
+  textarea {
+    white-space: nowrap;
   }
+
 
   .send-button {
     align-self: flex-end;
