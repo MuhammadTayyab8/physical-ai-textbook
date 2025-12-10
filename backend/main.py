@@ -148,6 +148,8 @@ class ChatBotQuery(BaseModel):
 async def generate(req: ChatBotQuery):
 
     try:
+        print("🔥 Gemini call happening")
+
         result = await Runner.run(
             starting_agent=agent,
             input=req.query,

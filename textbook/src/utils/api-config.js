@@ -6,7 +6,7 @@ export function setupApiConfig() {
   if (typeof window !== 'undefined') {
     // You can customize this based on your environment
     window.API_CONFIG = window.API_CONFIG || {
-      API_URL: process.env.REACT_APP_API_URL || process.env.API_URL || 'http://127.0.0.1:8000'
+      API_URL: process.env.REACT_APP_API_URL || process.env.API_URL || 'https://physical-ai-textbook-zeta.vercel.app'
     };
   }
 }

@@ -352,6 +352,9 @@ export default {
         }
       ]
     },
+    "custom": {
+      "apiUrl": "https://physical-ai-textbook-zeta.vercel.app"
+    },
     "colorMode": {
       "defaultMode": "light",
       "disableSwitch": false,

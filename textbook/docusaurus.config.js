@@ -169,6 +169,10 @@ const config = {
         theme: require('prism-react-renderer/themes/github'),
         darkTheme: require('prism-react-renderer/themes/dracula'),
       },
+      // Custom configuration for API
+      custom: {
+        apiUrl: process.env.REACT_APP_API_URL || 'https://physical-ai-textbook-zeta.vercel.app',
+      },
     }),
 };
 
