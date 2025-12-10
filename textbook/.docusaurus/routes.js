@@ -3,82 +3,94 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/hackathon-1/__docusaurus/debug',
-    component: ComponentCreator('/hackathon-1/__docusaurus/debug', '620'),
+    path: '/physical-ai-textbook/__docusaurus/debug',
+    component: ComponentCreator('/physical-ai-textbook/__docusaurus/debug', 'fea'),
     exact: true
   },
   {
-    path: '/hackathon-1/__docusaurus/debug/config',
-    component: ComponentCreator('/hackathon-1/__docusaurus/debug/config', 'afa'),
+    path: '/physical-ai-textbook/__docusaurus/debug/config',
+    component: ComponentCreator('/physical-ai-textbook/__docusaurus/debug/config', '317'),
     exact: true
   },
   {
-    path: '/hackathon-1/__docusaurus/debug/content',
-    component: ComponentCreator('/hackathon-1/__docusaurus/debug/content', 'd14'),
+    path: '/physical-ai-textbook/__docusaurus/debug/content',
+    component: ComponentCreator('/physical-ai-textbook/__docusaurus/debug/content', '317'),
     exact: true
   },
   {
-    path: '/hackathon-1/__docusaurus/debug/globalData',
-    component: ComponentCreator('/hackathon-1/__docusaurus/debug/globalData', '2a1'),
+    path: '/physical-ai-textbook/__docusaurus/debug/globalData',
+    component: ComponentCreator('/physical-ai-textbook/__docusaurus/debug/globalData', '2ef'),
     exact: true
   },
   {
-    path: '/hackathon-1/__docusaurus/debug/metadata',
-    component: ComponentCreator('/hackathon-1/__docusaurus/debug/metadata', '83a'),
+    path: '/physical-ai-textbook/__docusaurus/debug/metadata',
+    component: ComponentCreator('/physical-ai-textbook/__docusaurus/debug/metadata', '84d'),
     exact: true
   },
   {
-    path: '/hackathon-1/__docusaurus/debug/registry',
-    component: ComponentCreator('/hackathon-1/__docusaurus/debug/registry', '779'),
+    path: '/physical-ai-textbook/__docusaurus/debug/registry',
+    component: ComponentCreator('/physical-ai-textbook/__docusaurus/debug/registry', '032'),
     exact: true
   },
   {
-    path: '/hackathon-1/__docusaurus/debug/routes',
-    component: ComponentCreator('/hackathon-1/__docusaurus/debug/routes', '377'),
+    path: '/physical-ai-textbook/__docusaurus/debug/routes',
+    component: ComponentCreator('/physical-ai-textbook/__docusaurus/debug/routes', '2c3'),
     exact: true
   },
   {
-    path: '/hackathon-1/search',
-    component: ComponentCreator('/hackathon-1/search', 'd35'),
+    path: '/physical-ai-textbook/search',
+    component: ComponentCreator('/physical-ai-textbook/search', '910'),
     exact: true
   },
   {
-    path: '/hackathon-1/search',
-    component: ComponentCreator('/hackathon-1/search', '0e3'),
+    path: '/physical-ai-textbook/search',
+    component: ComponentCreator('/physical-ai-textbook/search', '4a9'),
     exact: true
   },
   {
-    path: '/hackathon-1/docs',
-    component: ComponentCreator('/hackathon-1/docs', '4a6'),
+    path: '/physical-ai-textbook/docs',
+    component: ComponentCreator('/physical-ai-textbook/docs', 'a3b'),
     routes: [
       {
-        path: '/hackathon-1/docs/foundations',
-        component: ComponentCreator('/hackathon-1/docs/foundations', 'ff0'),
+        path: '/physical-ai-textbook/docs/foundations',
+        component: ComponentCreator('/physical-ai-textbook/docs/foundations', '5f6'),
         exact: true,
         sidebar: "textbookSidebar"
       },
       {
-        path: '/hackathon-1/docs/introduction',
-        component: ComponentCreator('/hackathon-1/docs/introduction', '915'),
+        path: '/physical-ai-textbook/docs/hri',
+        component: ComponentCreator('/physical-ai-textbook/docs/hri', '616'),
         exact: true,
         sidebar: "textbookSidebar"
       },
       {
-        path: '/hackathon-1/docs/locomotion',
-        component: ComponentCreator('/hackathon-1/docs/locomotion', 'f6d'),
+        path: '/physical-ai-textbook/docs/introduction',
+        component: ComponentCreator('/physical-ai-textbook/docs/introduction', '6b1'),
+        exact: true,
+        sidebar: "textbookSidebar"
+      },
+      {
+        path: '/physical-ai-textbook/docs/locomotion',
+        component: ComponentCreator('/physical-ai-textbook/docs/locomotion', '886'),
+        exact: true,
+        sidebar: "textbookSidebar"
+      },
+      {
+        path: '/physical-ai-textbook/docs/manipulation',
+        component: ComponentCreator('/physical-ai-textbook/docs/manipulation', '720'),
         exact: true,
         sidebar: "textbookSidebar"
       }
     ]
   },
   {
-    path: '/hackathon-1/',
-    component: ComponentCreator('/hackathon-1/', 'b60'),
+    path: '/physical-ai-textbook/',
+    component: ComponentCreator('/physical-ai-textbook/', '56c'),
     exact: true
   },
   {
-    path: '/hackathon-1/',
-    component: ComponentCreator('/hackathon-1/', 'da2'),
+    path: '/physical-ai-textbook/',
+    component: ComponentCreator('/physical-ai-textbook/', 'fab'),
     exact: true
   },
   {

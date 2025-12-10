@@ -179,8 +179,4 @@ This chapter covered the fundamental concepts of humanoid robot locomotion, from
 
 Ask questions about this chapter using our AI textbook assistant:
 
-import ChatInterface from '@site/src/components/ChatInterface';
-
-<ChatInterface sessionId="locomotion-chapter" />
-
 ---

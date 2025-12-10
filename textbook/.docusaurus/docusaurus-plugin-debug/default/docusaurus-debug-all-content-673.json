@@ -9,8 +9,8 @@
           "badge": false,
           "noIndex": false,
           "className": "docs-version-current",
-          "path": "/hackathon-1/docs",
-          "tagsPath": "/hackathon-1/docs/tags",
+          "path": "/physical-ai-textbook/docs",
+          "tagsPath": "/physical-ai-textbook/docs/tags",
           "editUrl": "https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/docs",
           "editUrlLocalized": "https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/i18n/en/docusaurus-plugin-content-docs/current",
           "isLast": true,
@@ -27,7 +27,7 @@
               "source": "@site/docs/foundations.md",
               "sourceDirName": ".",
               "slug": "/foundations",
-              "permalink": "/hackathon-1/docs/foundations",
+              "permalink": "/physical-ai-textbook/docs/foundations",
               "draft": false,
               "editUrl": "https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/docs/foundations.md",
               "tags": [],
@@ -44,11 +44,39 @@
               "sidebar": "textbookSidebar",
               "previous": {
                 "title": "Introduction",
-                "permalink": "/hackathon-1/docs/introduction"
+                "permalink": "/physical-ai-textbook/docs/introduction"
               },
               "next": {
                 "title": "Locomotion Systems",
-                "permalink": "/hackathon-1/docs/locomotion"
+                "permalink": "/physical-ai-textbook/docs/locomotion"
+              }
+            },
+            {
+              "unversionedId": "hri",
+              "id": "hri",
+              "title": "Human-Robot Interaction and Social Robotics",
+              "description": "Understanding human-robot interaction principles and social robotics applications",
+              "source": "@site/docs/hri.md",
+              "sourceDirName": ".",
+              "slug": "/hri",
+              "permalink": "/physical-ai-textbook/docs/hri",
+              "draft": false,
+              "editUrl": "https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/docs/hri.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "sidebarPosition": 5,
+              "frontMatter": {
+                "sidebar_label": "Human-Robot Interaction",
+                "sidebar_position": 5,
+                "title": "Human-Robot Interaction and Social Robotics",
+                "description": "Understanding human-robot interaction principles and social robotics applications"
+              },
+              "sidebar": "textbookSidebar",
+              "previous": {
+                "title": "Manipulation Systems",
+                "permalink": "/physical-ai-textbook/docs/manipulation"
               }
             },
             {
@@ -59,7 +87,7 @@
               "source": "@site/docs/introduction.md",
               "sourceDirName": ".",
               "slug": "/introduction",
-              "permalink": "/hackathon-1/docs/introduction",
+              "permalink": "/physical-ai-textbook/docs/introduction",
               "draft": false,
               "editUrl": "https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/docs/introduction.md",
               "tags": [],
@@ -76,7 +104,7 @@
               "sidebar": "textbookSidebar",
               "next": {
                 "title": "Introduction",
-                "permalink": "/hackathon-1/docs/introduction"
+                "permalink": "/physical-ai-textbook/docs/introduction"
               }
             },
             {
@@ -87,7 +115,7 @@
               "source": "@site/docs/locomotion.md",
               "sourceDirName": ".",
               "slug": "/locomotion",
-              "permalink": "/hackathon-1/docs/locomotion",
+              "permalink": "/physical-ai-textbook/docs/locomotion",
               "draft": false,
               "editUrl": "https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/docs/locomotion.md",
               "tags": [],
@@ -104,7 +132,43 @@
               "sidebar": "textbookSidebar",
               "previous": {
                 "title": "Foundations",
-                "permalink": "/hackathon-1/docs/foundations"
+                "permalink": "/physical-ai-textbook/docs/foundations"
+              },
+              "next": {
+                "title": "Manipulation Systems",
+                "permalink": "/physical-ai-textbook/docs/manipulation"
+              }
+            },
+            {
+              "unversionedId": "manipulation",
+              "id": "manipulation",
+              "title": "Manipulation Systems in Humanoid Robots",
+              "description": "Understanding manipulation systems and control strategies in humanoid robots",
+              "source": "@site/docs/manipulation.md",
+              "sourceDirName": ".",
+              "slug": "/manipulation",
+              "permalink": "/physical-ai-textbook/docs/manipulation",
+              "draft": false,
+              "editUrl": "https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/docs/manipulation.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "Oct 14, 2018",
+              "sidebarPosition": 4,
+              "frontMatter": {
+                "sidebar_label": "Manipulation Systems",
+                "sidebar_position": 4,
+                "title": "Manipulation Systems in Humanoid Robots",
+                "description": "Understanding manipulation systems and control strategies in humanoid robots"
+              },
+              "sidebar": "textbookSidebar",
+              "previous": {
+                "title": "Locomotion Systems",
+                "permalink": "/physical-ai-textbook/docs/locomotion"
+              },
+              "next": {
+                "title": "Human-Robot Interaction",
+                "permalink": "/physical-ai-textbook/docs/hri"
               }
             }
           ],
@@ -141,11 +205,35 @@
               },
               {
                 "type": "category",
-                "label": "Systems and Applications",
+                "label": "Locomotion Systems",
                 "items": [
                   {
                     "type": "doc",
                     "id": "locomotion"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Manipulation Systems",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "manipulation"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Human-Robot Interaction",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "hri"
                   }
                 ],
                 "collapsed": true,
@@ -161,12 +249,12 @@
     "default": [
       {
         "type": "jsx",
-        "permalink": "/hackathon-1/",
+        "permalink": "/physical-ai-textbook/",
         "source": "@site/src/pages/index.js"
       },
       {
         "type": "mdx",
-        "permalink": "/hackathon-1/",
+        "permalink": "/physical-ai-textbook/",
         "source": "@site/src/pages/index.md",
         "title": "Physical AI & Humanoid Robotics Textbook",
         "description": "Welcome to the comprehensive textbook on Physical AI and Humanoid Robotics. This resource provides in-depth coverage of the field, from fundamental concepts to advanced applications.",
@@ -177,7 +265,7 @@
       },
       {
         "type": "jsx",
-        "permalink": "/hackathon-1/search",
+        "permalink": "/physical-ai-textbook/search",
         "source": "@site/src/pages/search.js"
       }
     ]

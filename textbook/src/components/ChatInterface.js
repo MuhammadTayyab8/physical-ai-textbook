@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import styles from './ChatInterface.module.css';
+import { sendQuery } from '../utils/api';
 
 // Define the ChatInterface component
 const ChatInterface = ({ sessionId }) => {
@@ -10,9 +11,14 @@ const ChatInterface = ({ sessionId }) => {
   const [selectedText, setSelectedText] = useState('');
   const messagesEndRef = useRef(null);
   const textareaRef = useRef(null);
-  
+
   const { colorMode } = useColorMode();
-  
+
+  // Focus input box when component mounts and after each message
+  useEffect(() => {
+    textareaRef.current?.focus();
+  }, []);
+
   // Scroll to bottom of messages
   useEffect(() => {
     scrollToBottom();
@@ -33,37 +39,14 @@ const ChatInterface = ({ sessionId }) => {
     };
   }, []);
 
-  // Preload chat API endpoint to establish connection early
-  useEffect(() => {
-    // Simple preload to warm up the connection
-    if (typeof window !== 'undefined') {
-      const preloadController = new AbortController();
-
-      // Use a minimal endpoint to preload the connection
-      fetch('/api/v1/health', {
-        signal: preloadController.signal,
-        method: 'GET',
-        cache: 'force-cache'
-      }).catch((error) => {
-        // Silently ignore preload errors
-        console.debug('Connection preload failed (not critical):', error);
-      });
-
-      // Cleanup function
-      return () => {
-        preloadController.abort();
-      };
-    }
-  }, []);
-  
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!inputValue.trim() || isLoading) return;
-    
+
     // Add user message to the chat
     const userMessage = {
       id: Date.now(),
@@ -71,48 +54,34 @@ const ChatInterface = ({ sessionId }) => {
       sender: 'user',
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     };
-    
+
     setMessages(prev => [...prev, userMessage]);
     setInputValue('');
     setIsLoading(true);
-    
+
     try {
       // Prepare context with selected text if available
-      const context = selectedText ? { selectedText, chapterId: null } : null;
-      
+      const queryWithContext = selectedText
+        ? `Context: ${selectedText}\n\nQuestion: ${inputValue}`
+        : inputValue;
+
       // Call the backend API
-      const response = await fetch('/api/v1/chat/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          question: inputValue,
-          session_id: sessionId || 'default-session',
-          context: context
-        }),
-      });
-      
-      if (!response.ok) {
-        throw new Error(`Server error: ${response.status}`);
-      }
-      
-      const data = await response.json();
-      
+      const data = await sendQuery(queryWithContext);
+
       // Add AI response to the chat
       const aiMessage = {
-        id: data.id,
-        text: data.answer,
+        id: Date.now(),
+        text: data.response,
         sender: 'ai',
-        sources: data.sources,
-        confidence: data.confidence,
+        sources: data.sources || [],
+        confidence: null,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
-      
+
       setMessages(prev => [...prev, aiMessage]);
     } catch (error) {
       console.error('Error sending message:', error);
-      
+
       // Add error message to the chat
       const errorMessage = {
         id: Date.now(),
@@ -120,38 +89,22 @@ const ChatInterface = ({ sessionId }) => {
         sender: 'error',
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
-      
+
       setMessages(prev => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
+      // Focus input box after message is sent (either success or error)
+      textareaRef.current?.focus();
     }
   };
-  
+
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSubmit(e);
     }
   };
-  
-  // Function to provide feedback on a response
-  const submitFeedback = async (responseId, rating) => {
-    try {
-      await fetch('/api/v1/chat/feedback', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          responseId: responseId,
-          rating: rating,
-        }),
-      });
-    } catch (error) {
-      console.error('Error submitting feedback:', error);
-    }
-  };
-  
+
   // Render message with proper formatting
   const renderMessage = (message) => {
     if (message.sender === 'ai') {
@@ -165,33 +118,12 @@ const ChatInterface = ({ sessionId }) => {
               <ul className={styles['sources-list']}>
                 {message.sources.map((source, idx) => (
                   <li key={idx}>
-                    <a href={source.url} target="_blank" rel="noopener noreferrer">
-                      {source.chapter}
-                    </a>
+                    <span>{source}</span>
                   </li>
                 ))}
               </ul>
             </div>
           )}
-
-          <div className={styles['feedback-section']}>
-            <small>Was this helpful?
-              <button
-                onClick={() => submitFeedback(message.id, 5)}
-                className={`${styles['feedback-btn']} ${styles['positive']}`}
-                title="Helpful"
-              >
-                👍
-              </button>
-              <button
-                onClick={() => submitFeedback(message.id, 1)}
-                className={`${styles['feedback-btn']} ${styles['negative']}`}
-                title="Not helpful"
-              >
-                👎
-              </button>
-            </small>
-          </div>
         </div>
       );
     } else if (message.sender === 'error') {
@@ -204,7 +136,7 @@ const ChatInterface = ({ sessionId }) => {
       return <div className={styles['user-message-content']}>{message.text}</div>;
     }
   };
-  
+
   return (
     <div className={`${styles['chat-interface']} ${styles[colorMode]}`}>
       <div className={styles['chat-header']}>
@@ -215,7 +147,7 @@ const ChatInterface = ({ sessionId }) => {
       <div className={styles['chat-messages']}>
         {messages.length === 0 ? (
           <div className={styles['welcome-message']}>
-            <p>Hello! I'm your textbook assistant. Ask me anything about the Physical AI & Humanoid Robotics content.</p>
+            <p>Hello! I am your textbook assistant. Ask me anything about the Physical AI & Humanoid Robotics content.</p>
             {selectedText && (
               <p className={styles['selected-text-notice']}>
                 I noticed you selected: <em>"{selectedText.substring(0, 60)}{selectedText.length > 60 ? '...' : ''}"</em>
@@ -268,7 +200,7 @@ const ChatInterface = ({ sessionId }) => {
             disabled={!inputValue.trim() || isLoading}
             className={styles['send-button']}
           >
-            {isLoading ? 'Sending...' : '→'}
+            {isLoading ? '→' : '→'}
           </button>
         </div>
       </form>

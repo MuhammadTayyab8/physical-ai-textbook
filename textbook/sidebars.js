@@ -23,9 +23,23 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Systems and Applications',
+      label: 'Locomotion Systems',
       items: [
         'locomotion',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Manipulation Systems',
+      items: [
+        'manipulation',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Human-Robot Interaction',
+      items: [
+        'hri',
       ],
     },
   ],

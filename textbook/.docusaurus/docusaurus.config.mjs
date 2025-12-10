@@ -8,9 +8,9 @@ export default {
   "tagline": "Comprehensive textbook on Physical AI and Humanoid Robotics",
   "favicon": "img/favicon.ico",
   "url": "https://MuhammadTayyab8.github.io",
-  "baseUrl": "/hackathon-1/",
+  "baseUrl": "/physical-ai-textbook/",
   "organizationName": "MuhammadTayyab8",
-  "projectName": "hackathon-1",
+  "projectName": "physical-ai-textbook",
   "onBrokenLinks": "throw",
   "onBrokenMarkdownLinks": "warn",
   "i18n": {
@@ -48,6 +48,9 @@ export default {
     ]
   ],
   "plugins": [],
+  "clientModules": [
+    "D:\\Tayyab\\AI-Hackathon\\hackathon-1\\textbook\\src\\utils\\environment.js"
+  ],
   "themes": [
     [
       "@easyops-cn/docusaurus-search-local",
@@ -67,21 +70,12 @@ export default {
     "image": "img/docusaurus-social-card.jpg",
     "navbar": {
       "title": "Physical AI Textbook",
-      "logo": {
-        "alt": "Physical AI & Humanoid Robotics Logo",
-        "src": "img/logo.svg"
-      },
       "items": [
         {
           "type": "docSidebar",
           "sidebarId": "textbookSidebar",
           "position": "left",
           "label": "Textbook Chapters"
-        },
-        {
-          "to": "/",
-          "label": "Home",
-          "position": "left"
         },
         {
           "href": "https://github.com/MuhammadTayyab8/hackathon-1",
@@ -112,6 +106,14 @@ export default {
             {
               "label": "Locomotion",
               "to": "/docs/locomotion"
+            },
+            {
+              "label": "Manipulation",
+              "to": "/docs/manipulation"
+            },
+            {
+              "label": "Human-Robot Interaction",
+              "to": "/docs/hri"
             }
           ]
         },
@@ -375,7 +377,6 @@ export default {
   "scripts": [],
   "headTags": [],
   "stylesheets": [],
-  "clientModules": [],
   "titleDelimiter": "|",
   "noIndex": false,
   "markdown": {

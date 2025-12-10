@@ -183,8 +183,5 @@ The foundations of Physical AI and robotics encompass a wide range of mathematic
 
 Ask questions about this chapter using our AI textbook assistant:
 
-import ChatInterface from '@site/src/components/ChatInterface';
-
-<ChatInterface sessionId="foundations-chapter" />
-
 ---
+

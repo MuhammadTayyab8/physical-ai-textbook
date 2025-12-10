@@ -6,7 +6,7 @@
   "source": "@site/docs/locomotion.md",
   "sourceDirName": ".",
   "slug": "/locomotion",
-  "permalink": "/hackathon-1/docs/locomotion",
+  "permalink": "/physical-ai-textbook/docs/locomotion",
   "draft": false,
   "editUrl": "https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/docs/locomotion.md",
   "tags": [],
@@ -23,6 +23,10 @@
   "sidebar": "textbookSidebar",
   "previous": {
     "title": "Foundations",
-    "permalink": "/hackathon-1/docs/foundations"
+    "permalink": "/physical-ai-textbook/docs/foundations"
+  },
+  "next": {
+    "title": "Manipulation Systems",
+    "permalink": "/physical-ai-textbook/docs/manipulation"
   }
 }

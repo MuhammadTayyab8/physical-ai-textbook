@@ -65,8 +65,4 @@ Continue to the next chapter to explore the fundamentals of robotics and AI that
 
 Ask questions about this chapter using our AI textbook assistant:
 
-import ChatInterface from '@site/src/components/ChatInterface';
-
-<ChatInterface sessionId="introduction-chapter" />
-
 ---

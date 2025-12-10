@@ -16,13 +16,13 @@
           {
             "type": "link",
             "label": "Introduction",
-            "href": "/hackathon-1/docs/introduction",
+            "href": "/physical-ai-textbook/docs/introduction",
             "docId": "introduction"
           }
         ],
         "collapsed": true,
         "collapsible": true,
-        "href": "/hackathon-1/docs/introduction"
+        "href": "/physical-ai-textbook/docs/introduction"
       },
       {
         "type": "category",
@@ -31,7 +31,7 @@
           {
             "type": "link",
             "label": "Foundations",
-            "href": "/hackathon-1/docs/foundations",
+            "href": "/physical-ai-textbook/docs/foundations",
             "docId": "foundations"
           }
         ],
@@ -40,13 +40,41 @@
       },
       {
         "type": "category",
-        "label": "Systems and Applications",
+        "label": "Locomotion Systems",
         "items": [
           {
             "type": "link",
             "label": "Locomotion Systems",
-            "href": "/hackathon-1/docs/locomotion",
+            "href": "/physical-ai-textbook/docs/locomotion",
             "docId": "locomotion"
+          }
+        ],
+        "collapsed": true,
+        "collapsible": true
+      },
+      {
+        "type": "category",
+        "label": "Manipulation Systems",
+        "items": [
+          {
+            "type": "link",
+            "label": "Manipulation Systems",
+            "href": "/physical-ai-textbook/docs/manipulation",
+            "docId": "manipulation"
+          }
+        ],
+        "collapsed": true,
+        "collapsible": true
+      },
+      {
+        "type": "category",
+        "label": "Human-Robot Interaction",
+        "items": [
+          {
+            "type": "link",
+            "label": "Human-Robot Interaction",
+            "href": "/physical-ai-textbook/docs/hri",
+            "docId": "hri"
           }
         ],
         "collapsed": true,
@@ -61,6 +89,12 @@
       "description": "Explore the foundational concepts of Physical AI and Robotics",
       "sidebar": "textbookSidebar"
     },
+    "hri": {
+      "id": "hri",
+      "title": "Human-Robot Interaction and Social Robotics",
+      "description": "Understanding human-robot interaction principles and social robotics applications",
+      "sidebar": "textbookSidebar"
+    },
     "introduction": {
       "id": "introduction",
       "title": "Introduction to Physical AI & Humanoid Robotics",
@@ -71,6 +105,12 @@
       "id": "locomotion",
       "title": "Locomotion Systems in Humanoid Robots",
       "description": "Understanding locomotion systems and control strategies in humanoid robots",
+      "sidebar": "textbookSidebar"
+    },
+    "manipulation": {
+      "id": "manipulation",
+      "title": "Manipulation Systems in Humanoid Robots",
+      "description": "Understanding manipulation systems and control strategies in humanoid robots",
       "sidebar": "textbookSidebar"
     }
   }

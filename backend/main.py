@@ -26,13 +26,26 @@ load_dotenv()
 # ================================
 app = FastAPI(title="RAG ChatBot")
 
+allowed_origins = [
+    "http://localhost:3000/",
+    "https://muhammadtayyab8.github.io/physical-ai-textbook/",
+    "http://192.168.43.129:3000"
+]
+
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://192.168.43.129:3000"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "https://muhammadtayyab8.github.io",
+        "https://muhammadtayyab8.github.io/physical-ai-textbook",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 # ================================
 # API Keys
@@ -75,7 +88,18 @@ qdrant = QdrantClient(
 # Tool for Retrieval
 # ================================
 @function_tool
-def retrieve(query):
+def retrieve(query: str):
+    """
+    Retrieve relevant textbook chapters using semantic search.
+
+    This function:
+    - Searches the Qdrant vector database
+    - Retrieves the most relevant chunks from the
+      Physical AI & Humanoid Robotics textbook chapters
+
+    The returned text is used as context for answering
+    the user's question.
+    """
     embedding = get_embedding(query)
     result = qdrant.query_points(
         collection_name="physical-ai-textbook",

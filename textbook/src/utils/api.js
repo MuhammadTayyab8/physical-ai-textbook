@@ -1,9 +1,23 @@
 // textbook/src/utils/api.js
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://127.0.0.1:8000';
+// Default API configuration
+const DEFAULT_API_BASE_URL = 'http://127.0.0.1:8000';
+
+// Function to get API base URL with fallback
+function getApiBaseUrl() {
+  // Check for custom API URL in window object (can be set by Docusaurus config)
+  if (typeof window !== 'undefined' && window.API_CONFIG) {
+    return window.API_CONFIG.API_URL || DEFAULT_API_BASE_URL;
+  }
+
+  // Fallback to default
+  return DEFAULT_API_BASE_URL;
+}
 
 // Function to send a query to the backend
 export const sendQuery = async (query) => {
   try {
+    const API_BASE_URL = getApiBaseUrl();
+    console.log(API_BASE_URL, "API_BASE_URL")
     const response = await fetch(`${API_BASE_URL}/chat`, {
       method: 'POST',
       headers: {
@@ -29,6 +43,7 @@ export const sendQuery = async (query) => {
 // Health check function
 export const healthCheck = async () => {
   try {
+    const API_BASE_URL = getApiBaseUrl();
     const response = await fetch(`${API_BASE_URL}/health`);
     return response.ok;
   } catch (error) {

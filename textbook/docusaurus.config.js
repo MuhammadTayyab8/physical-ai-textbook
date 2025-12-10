@@ -8,9 +8,9 @@ const config = {
   favicon: 'img/favicon.ico',
 
   url: 'https://MuhammadTayyab8.github.io',
-  baseUrl: '/hackathon-1/',     // <- must match repo name
+  baseUrl: '/physical-ai-textbook/',     // <- must match repo name
   organizationName: 'MuhammadTayyab8',
-  projectName: 'hackathon-1',   // <- must match repo name
+  projectName: 'physical-ai-textbook',   // <- must match repo name
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -56,6 +56,10 @@ const config = {
     // Additional plugins can be added here
   ],
 
+  clientModules: [
+    require.resolve('./src/utils/environment.js'),
+  ],
+
   themes: [
     // Add search functionality
     [
@@ -87,10 +91,10 @@ const config = {
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'Physical AI Textbook',
-        logo: {
-          alt: 'Physical AI & Humanoid Robotics Logo',
-          src: 'img/logo.svg',
-        },
+        // logo: {
+        //   alt: 'Physical AI & Humanoid Robotics Logo',
+          // src: 'img/logo.svg',
+        // },
         items: [
           {
             type: 'docSidebar',
@@ -98,11 +102,11 @@ const config = {
             position: 'left',
             label: 'Textbook Chapters',
           },
-          {
-            to: '/',
-            label: 'Home',
-            position: 'left',
-          },
+          // {
+          //   to: '/',
+          //   label: 'Home',
+          //   position: 'left',
+          // },
           {
             href: 'https://github.com/MuhammadTayyab8/hackathon-1',
             label: 'GitHub',
@@ -131,6 +135,14 @@ const config = {
               {
                 label: 'Locomotion',
                 to: '/docs/locomotion',
+              },
+              {
+                label: 'Manipulation',
+                to: '/docs/manipulation',
+              },
+              {
+                label: 'Human-Robot Interaction',
+                to: '/docs/hri',
               },
             ],
           },
