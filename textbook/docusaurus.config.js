@@ -33,7 +33,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/MuhammadTayyab8/hackathon-1/edit/main/textbook/',
+            'https://github.com/MuhammadTayyab8/physical-ai-textbook/edit/main/textbook/',
           routeBasePath: '/docs', // This ensures docs are served from /docs
           showLastUpdateTime: true,
           editCurrentVersion: true,
@@ -61,25 +61,19 @@ const config = {
   ],
 
   themes: [
-    // Add search functionality
     [
       "@easyops-cn/docusaurus-search-local",
       {
-        // ... Your options.
-        // `hashed` is recommended as long-term-cache of index file is possible.
         hashed: true,
-        // For Docs using Chinese, The `language` is recommended to set to:
-        // ```
-        // language: ["en", "zh"],
-        // ```
         language: ["en"],
-        // Optional: To Index Page contents.
-        indexDocs: true,
-        indexPages: true,
-        // Optional: To set relative paths to search engine.
         docsRouteBasePath: "/docs",
-        // Optional: To specify the max length of highlight text.
-        highlightSearchTermsOnTargetPage: true,
+        indexDocs: true,
+        indexBlog: false,  // Disable blog indexing
+        indexPages: false, // Disable page indexing - this might prevent the error
+        ignoreFiles: [     // Exclude files that might be causing parsing issues
+          "manipulation.md",
+          "hri.md"
+        ],
       },
     ],
   ],
@@ -108,7 +102,7 @@ const config = {
           //   position: 'left',
           // },
           {
-            href: 'https://github.com/MuhammadTayyab8/hackathon-1',
+            href: 'https://github.com/MuhammadTayyab8/physical-ai-textbook',
             label: 'GitHub',
             position: 'right',
           },
